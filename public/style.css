@@ -1,0 +1,309 @@
+
+        :root {
+            --color-dark: #121212;
+            --color-light: #FFFFFF;
+            --color-gray: #F0F0F0;
+            --color-accent: #D84315;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Lato', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-sans);
+            background-color: var(--color-light);
+            color: var(--color-dark);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Hero */
+        .hero-section {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            padding: 20px 0 80px 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 80px;
+        }
+
+        nav a {
+            color: var(--color-light);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        nav a.active {
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 5px;
+        }
+
+        .hamburger {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-serif);
+            font-size: 4.5em;
+            margin: 0;
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 10px 0 30px 0;
+        }
+
+        .cta-button {
+            background-color: var(--color-accent);
+            color: var(--color-light);
+            border: none;
+            padding: 15px 30px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        /* Project Origin */
+        .origin-section {
+            padding: 80px 0;
+        }
+
+        .origin-section h2 {
+            font-family: var(--font-serif);
+            font-size: 2em;
+            margin-bottom: 40px;
+        }
+
+        .origin-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Top 300 Section */
+        .top-300-section {
+            padding: 80px 0;
+            background-color: var(--color-gray);
+        }
+
+        .section-title-bar {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            padding: 10px 20px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        .ranking-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .ranking-list h3 {
+            font-family: var(--font-serif);
+            font-size: 2em;
+            margin-top: 0;
+        }
+
+        .search-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .ranking-search {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            padding-right: 30px; /* Make space for the icon */
+        }
+
+        .clear-search {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #ccc;
+            display: none; /* Hidden by default */
+        }
+
+        .clear-search.visible {
+            display: block;
+        }
+
+        .ranking-table {
+            font-size: 0.9em;
+        }
+
+        .ranking-table .header,
+        .ranking-table .row {
+            display: grid;
+            grid-template-columns: 50px 50px 1fr 50px;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+
+        .ranking-table .song-cover {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+        }
+
+        .ranking-table .header {
+            font-weight: 700;
+        }
+
+        .ranking-table .row .song {
+            font-weight: 700;
+        }
+
+        .ranking-table .row .year-box {
+            background-color: #eee;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .ranking-description {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .ranking-pagination {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        /* Key Insights */
+        .insights-section {
+            background-color: var(--color-gray);
+            padding: 80px 0;
+        }
+
+        .insights-section h2 {
+            font-family: var(--font-serif);
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .insight-card {
+            border: 1px solid #ccc;
+            background-color: var(--color-light);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .insight-card .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--color-accent);
+        }
+
+        .insight-card h4 {
+            margin: 10px 0 0 0;
+            font-size: 1.1em;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            padding: 50px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-container nav a {
+            color: var(--color-light);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+        
+        .social-icons a {
+            color: var(--color-light);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 50px;
+            margin-top: 50px;
+            border-top: 1px solid #444;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        .song-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 3em; }
+            .origin-columns, .ranking-layout, .insights-grid, .footer-grid { grid-template-columns: 1fr; }
+            header nav { display: none; }
+            .footer-right { text-align: left; margin-top: 40px; }
+
+            .ranking-table .header {
+                display: none; /* Hide header on small screens */
+            }
+
+            .ranking-table .row {
+                grid-template-columns: 30px 50px 1fr 50px;
+                gap: 10px;
+            }
+
+            .song-details {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        /* New Ranking Section */
+        .ultimate-ranking-section {
+            padding: 80px 0;
+            background-color: #FBE9E7;
+        }
+    

@@ -3,8 +3,8 @@ const path = require('path');
 const vm = require('vm');
 
 const dataPath = path.join(__dirname, 'data.js');
-const templatePath = path.join(__dirname, '80s.html');
-const outputPath = path.join(__dirname, '80s.html');
+const templatePath = path.join(__dirname, 'index.html');
+const outputPath = path.join(__dirname, 'index.html');
 
 function build() {
     console.log('Building static HTML...');
@@ -35,14 +35,15 @@ function build() {
             // The rank from the data.js file is used directly if available, otherwise fallback to index
             const rank = song.rank || index + 1;
             return `
-            <div class="row">
-                <span>${rank}.</span>
-                <img class="song-cover" src="${song.imageUrl}" alt="${song.title} cover" loading="lazy">
+            <div class="row" itemscope itemtype="http://schema.org/MusicRecording">
+                <meta itemprop="url" content="https://open.spotify.com/intl-de/track/2WfaOiMkCvy7F5fcp2zZ8L?si=53dffe006b374390" />
+                <span itemprop="position">${rank}.</span>
+                <img class="song-cover" itemprop="image" src="${song.imageUrl}" alt="${song.title} cover" loading="lazy">
                 <div class="song-details">
-                    <span>${song.artist}</span>
-                    <span class="song">${song.title}</span>
+                    <span itemprop="byArtist" itemscope itemtype="http://schema.org/Person"><span itemprop="name">${song.artist}</span></span>
+                    <span class="song" itemprop="name">${song.title}</span>
                 </div>
-                <span class="year-box">${song.year}</span>
+                <span class="year-box" itemprop="datePublished">${song.year}</span>
             </div>`;
         }).join('\n');
 
