@@ -76,3 +76,17 @@ Since this is a webpage, you probably want to see it live on the internet. GitHu
 
 After a minute or two, GitHub will publish your site. You'll see a green message at the top of the Pages settings with the live URL, which will be something like:
 `https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/`
+
+---
+
+## 🌿 How to Make Changes Safely with Branches
+
+Using branches is the best way to experiment with new ideas (like a new color scheme or layout) without affecting your live `main` branch.
+
+### 1. Create and Switch to a New Branch
+
+First, make sure you are on your main branch.
+
+```bash
+# Switch to your main branch
+git checkout main
