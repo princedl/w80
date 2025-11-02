@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Eighties: A Legacy in Streams</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --color-dark: #121212;
+            --color-light: #FFFFFF;
+            --color-gray: #F0F0F0;
+            --color-accent: #D84315;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Lato', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-sans);
+            background-color: var(--color-light);
+            color: var(--color-dark);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Hero */
+        .hero-section {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            padding: 20px 0 80px 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 80px;
+        }
+
+        nav a {
+            color: var(--color-light);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        nav a.active {
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 5px;
+        }
+
+        .hamburger {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-serif);
+            font-size: 4.5em;
+            margin: 0;
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 10px 0 30px 0;
+        }
+
+        .cta-button {
+            background-color: var(--color-accent);
+            color: var(--color-light);
+            border: none;
+            padding: 15px 30px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        /* Project Origin */
+        .origin-section {
+            padding: 80px 0;
+        }
+
+        .origin-section h2 {
+            font-family: var(--font-serif);
+            font-size: 2em;
+            margin-bottom: 40px;
+        }
+
+        .origin-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Top 300 Section */
+        .top-300-section {
+            padding: 80px 0;
+            background-color: var(--color-gray);
+        }
+
+        .section-title-bar {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            padding: 10px 20px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        .ranking-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .ranking-list h3 {
+            font-family: var(--font-serif);
+            font-size: 2em;
+            margin-top: 0;
+        }
+
+        .search-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .ranking-search {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            padding-right: 30px; /* Make space for the icon */
+        }
+
+        .clear-search {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #ccc;
+            display: none; /* Hidden by default */
+        }
+
+        .clear-search.visible {
+            display: block;
+        }
+
+        .ranking-table {
+            font-size: 0.9em;
+        }
+
+        .ranking-table .header,
+        .ranking-table .row {
+            display: grid;
+            grid-template-columns: 50px 50px 1fr 50px;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+
+        .ranking-table .song-cover {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+        }
+
+        .ranking-table .header {
+            font-weight: 700;
+        }
+
+        .ranking-table .row .song {
+            font-weight: 700;
+        }
+
+        .ranking-table .row .year-box {
+            background-color: #eee;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .ranking-description {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .ranking-pagination {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        /* Key Insights */
+        .insights-section {
+            background-color: var(--color-gray);
+            padding: 80px 0;
+        }
+
+        .insights-section h2 {
+            font-family: var(--font-serif);
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .insight-card {
+            border: 1px solid #ccc;
+            background-color: var(--color-light);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .insight-card .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--color-accent);
+        }
+
+        .insight-card h4 {
+            margin: 10px 0 0 0;
+            font-size: 1.1em;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            padding: 80px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-left h4,
+        .footer-right h4 {
+            font-family: var(--font-serif);
+            font-size: 1.5em;
+        }
+
+        .footer-left ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-left li {
+            margin-bottom: 10px;
+        }
+
+        .footer-right {
+            text-align: right;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            margin-left: 15px;
+        }
+
+        .footer-right .cta-button {
+            margin-top: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 60px;
+            font-size: 0.8em;
+            color: #aaa;
+        }
+
+        .song-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 3em; }
+            .origin-columns, .ranking-layout, .insights-grid, .footer-grid { grid-template-columns: 1fr; }
+            header nav { display: none; }
+            .footer-right { text-align: left; margin-top: 40px; }
+
+            .ranking-table .header {
+                display: none; /* Hide header on small screens */
+            }
+
+            .ranking-table .row {
+                grid-template-columns: 50px 50px 1fr 50px;
+            }
+
+            .song-details {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        /* New Ranking Section */
+        .ultimate-ranking-section {
+            padding: 80px 0;
+            background-color: var(--color-light);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <header>
+                    <div class="logo">MY80SLIST.COM</div>
+                    <nav>
+                        <a href="#" class="active">HOME</a>
+                        <a href="#">ABOUT</a>
+                        <a href="#">METHODOLOGY</a>
+                    </nav>
+                    <div class="hamburger"><i class="fas fa-bars"></i></div>
+                </header>
+                <div class="hero-content">
+                    <h1>THE Eighties: A Legacy in Streams.</h1>
+                    <p>"An Analytical Review of the Spotify Playlists & The Timeless Top 300."</p>
+                    <button class="cta-button">Explore The Ranking</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Origin Section -->
+        <section class="origin-section">
+            <div class="container">
+                <h2>THE PROJECT'S ORIGIN</h2>
+                <div class="origin-columns">
+                    <div class="origin-playlist">
+                        
+                        <iframe title="Spotify Embed: Top 300 80s Playlist" style="border-radius:12px"
+                            src="https://open.spotify.com/embed/playlist/6d84bHitz88oLQgDvTXu1H?utm_source=generator"
+                            width="100%" height="452" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"></iframe>
+                    </div>
+                    <div class="origin-text">
+                        <div class="section-title-bar">THE HIGHER OR LOWER GAME</div>
+                        <p>Driven by a passion for the decade's iconic sound, this study reveals which songs have
+                            transcended time...</p>
+                        <p>Not all 80s songs have aged well. Do you remember Looking for Freedom by David Hasselhof? In Awirtweland it was xx weeks in the top10, 12 weeks Nr.1 spot.
+                            I don't think I havw heard this song again... nor do I want to.....</p>
+                        <p>We have scurred hundreds of spotify playlists to find out which songs are still listened to. Besides classics like Take on Me or Sweet Dreams, a couple of surprises have popped up</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- New Ultimate Ranking Section -->
+        <section class="ultimate-ranking-section">
+            <div class="container">
+                <div class="ranking-list">
+                    <h3>THE ULTIMATE 80S RANKING</h3>
+                    <div class="search-container">
+                        <input type="text" class="ranking-search" placeholder="Search the full 300 ranking...">
+                        <i class="fas fa-times-circle clear-search"></i>
+                    </div>
+                    <div class="ranking-table">
+                        <div class="header">
+                            <span>RANK</span>
+                            <span></span>
+                            <div class="song-details">
+                                <span>ARTIST</span>
+                                <span>SONG</span>
+                            </div>
+                            <span>YEAR</span>
+                        </div>
+                        <div id="ranking-table-body"></div>
+                    </div>
+                    
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Key Insights Section -->
+        <section class="insights-section">
+            <div class="container">
+                <h2>KEY INSIGHTS</h2>
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>DOMINANT GENRES:</h4>
+                        <p>SYNTH-POP & ROCK</p>
+                    </div>
+                    <div class="insight-card">
+                        <div class="icon"><i class="fas fa-question"></i></div>
+                        <h4>SURPRISE HIT:</h4>
+                        <p>"NEVER GONNA GIVE YOU UP" (NO. 87)</p>
+                    </div>
+                    <div class="insight-card">
+                        <div class="icon"><i class="fas fa-volume-up"></i></div>
+                        <h4>THE POWER YEAR:</h4>
+                        <p>1984</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <h4>METHODOLOGY</h4>
+                    <ul>
+                        <li>1. DATA COLLECTION: SPOTIFY API</li>
+                        <li>2. DATA CLEANING: 1980-1989 FILTER</li>
+                        <li>3. RANKING LOGIC: PLAYLIST FREQUENCY</li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <h4>DISCUSS WITH US!</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <button class="cta-button">SHARE THE 80S LOVE</button>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 MY80SLIST.COM
+            </div>
+        </div>
+    </footer>
+
+<script src="data.js"></script>
+<script>
+    const tableBody = document.getElementById('ranking-table-body');
+    const searchInput = document.querySelector('.ranking-search');
+    const clearSearch = document.querySelector('.clear-search');
+    const allSongs = songs.slice(0, 300).map((song, index) => ({...song, rank: index + 1}));
+    let currentSongs = allSongs;
+
+    function displaySongs() {
+        // Clear existing rows
+        tableBody.innerHTML = '';
+
+        currentSongs.forEach(song => {
+            const row = document.createElement('div');
+            row.classList.add('row');
+            row.innerHTML = `
+                <span>${song.rank}.</span>
+                <img class="song-cover" src="${song.imageUrl}" alt="${song.title} cover" loading="lazy">
+                <div class="song-details">
+                    <span>${song.artist.toUpperCase()}</span>
+                    <span class="song">${song.title.toUpperCase()}</span>
+                </div>
+                <span class="year-box">${song.year}</span>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
+
+    function filterSongs() {
+        const searchTerm = searchInput.value.toLowerCase();
+        if (searchTerm) {
+            clearSearch.classList.add('visible');
+        } else {
+            clearSearch.classList.remove('visible');
+        }
+        currentSongs = allSongs.filter(song => {
+            return song.title.toLowerCase().includes(searchTerm) ||
+                   song.artist.toLowerCase().includes(searchTerm) || 
+                   song.year.toLowerCase().includes(searchTerm);
+        });
+        displaySongs();
+    }
+
+    function clearSearchTerm() {
+        searchInput.value = '';
+        clearSearch.classList.remove('visible');
+        currentSongs = allSongs;
+        displaySongs();
+    }
+
+    searchInput.addEventListener('input', filterSongs);
+    clearSearch.addEventListener('click', clearSearchTerm);
+
+    // The initial displaySongs() call is removed to prevent wiping out the pre-rendered HTML.
+</script>
+</body>
+
+</html>

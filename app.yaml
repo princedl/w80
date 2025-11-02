@@ -1,0 +1,5 @@
+name: w80
+app_id: da_RLmILtvU1b5D
+owner: a10a10a10
+package: '.'
+kind: wasmer.io/App.v0

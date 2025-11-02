@@ -1,0 +1,3462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Eighties: A Legacy in Streams</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+    <style>
+        :root {
+            --color-dark: #121212;
+            --color-light: #FFFFFF;
+            --color-gray: #F0F0F0;
+            --color-accent: #D84315;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Lato', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-sans);
+            background-color: var(--color-light);
+            color: var(--color-dark);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Hero */
+        .hero-section {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            padding: 20px 0 80px 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 80px;
+        }
+
+        nav a {
+            color: var(--color-light);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        nav a.active {
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 5px;
+        }
+
+        .hamburger {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-serif);
+            font-size: 4.5em;
+            margin: 0;
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 10px 0 30px 0;
+        }
+
+        .cta-button {
+            background-color: var(--color-accent);
+            color: var(--color-light);
+            border: none;
+            padding: 15px 30px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        /* Project Origin */
+        .origin-section {
+            padding: 80px 0;
+        }
+
+        .origin-section h2 {
+            font-family: var(--font-serif);
+            font-size: 2em;
+            margin-bottom: 40px;
+        }
+
+        .origin-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Top 300 Section */
+        .top-300-section {
+            padding: 80px 0;
+            background-color: var(--color-gray);
+        }
+
+        .section-title-bar {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            padding: 10px 20px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        .ranking-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .ranking-list h3 {
+            font-family: var(--font-serif);
+            font-size: 2em;
+            margin-top: 0;
+        }
+
+        .search-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .ranking-search {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            padding-right: 30px; /* Make space for the icon */
+        }
+
+        .clear-search {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #ccc;
+            display: none; /* Hidden by default */
+        }
+
+        .clear-search.visible {
+            display: block;
+        }
+
+        .ranking-table {
+            font-size: 0.9em;
+        }
+
+        .ranking-table .header,
+        .ranking-table .row {
+            display: grid;
+            grid-template-columns: 50px 50px 1fr 50px;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+
+        .ranking-table .song-cover {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+        }
+
+        .ranking-table .header {
+            font-weight: 700;
+        }
+
+        .ranking-table .row .song {
+            font-weight: 700;
+        }
+
+        .ranking-table .row .year-box {
+            background-color: #eee;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .ranking-description {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .ranking-pagination {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        /* Key Insights */
+        .insights-section {
+            background-color: var(--color-gray);
+            padding: 80px 0;
+        }
+
+        .insights-section h2 {
+            font-family: var(--font-serif);
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .insight-card {
+            border: 1px solid #ccc;
+            background-color: var(--color-light);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .insight-card .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--color-accent);
+        }
+
+        .insight-card h4 {
+            margin: 10px 0 0 0;
+            font-size: 1.1em;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            padding: 50px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-container nav a {
+            color: var(--color-light);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+        
+        .social-icons a {
+            color: var(--color-light);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 50px;
+            margin-top: 50px;
+            border-top: 1px solid #444;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        .song-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 3em; }
+            .origin-columns, .ranking-layout, .insights-grid, .footer-grid { grid-template-columns: 1fr; }
+            header nav { display: none; }
+            .footer-right { text-align: left; margin-top: 40px; }
+
+            .ranking-table .header {
+                display: none; /* Hide header on small screens */
+            }
+
+            .ranking-table .row {
+                grid-template-columns: 50px 50px 1fr 50px;
+            }
+
+            .song-details {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        /* New Ranking Section */
+        .ultimate-ranking-section {
+            padding: 80px 0;
+            background-color: var(--color-light);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <header>
+                    <div class="logo">MY80SLIST.COM</div>
+                    <nav>
+                        <a href="#" class="active">HOME</a>
+                        <a href="#">ABOUT</a>
+                        <a href="#">METHODOLOGY</a>
+                    </nav>
+                    <div class="hamburger"><i class="fas fa-bars"></i></div>
+                </header>
+                <div class="hero-content">
+                    <h1>THE Eighties: A Legacy in Streams.</h1>
+                    <p>"An Analytical Review of the Spotify Playlists & The Timeless Top 300."</p>
+                    <button class="cta-button">Explore The Ranking</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Origin Section -->
+        <section class="origin-section">
+            <div class="container">
+                <h2>THE PROJECT'S ORIGIN</h2>
+                <div class="origin-columns">
+                    <div class="origin-playlist">
+                        
+                        <iframe title="Spotify Embed: Top 300 80s Playlist" style="border-radius:12px"
+                            src="https://open.spotify.com/embed/playlist/6d84bHitz88oLQgDvTXu1H?utm_source=generator"
+                            width="100%" height="452" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"></iframe>
+                    </div>
+                    <div class="origin-text">
+                        <div class="section-title-bar">THE HIGHER OR LOWER GAME</div>
+                        <p>Driven by a passion for the decade's iconic sound, this study reveals which songs have
+                            transcended time...</p>
+                        <p>Not all 80s songs have aged well. Do you remember Looking for Freedom by David Hasselhof? In Awirtweland it was xx weeks in the top10, 12 weeks Nr.1 spot.
+                            I don't think I havw heard this song again... nor do I want to.....</p>
+                        <p>We have scurred hundreds of spotify playlists to find out which songs are still listened to. Besides classics like Take on Me or Sweet Dreams, a couple of surprises have popped up</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- New Ultimate Ranking Section -->
+        <section class="ultimate-ranking-section">
+            <div class="container">
+                <div class="ranking-list">
+                    <h3>THE ULTIMATE 80S RANKING</h3>
+                    <div class="search-container">
+                        <input type="text" class="ranking-search" placeholder="Search the full 300 ranking...">
+                        <i class="fas fa-times-circle clear-search"></i>
+                    </div>
+                    <div class="ranking-table">
+                        <div class="header">
+                            <span>RANK</span>
+                            <span></span>
+                            <div class="song-details">
+                                <span>ARTIST</span>
+                                <span>SONG</span>
+                            </div>
+                            <span>YEAR</span>
+                        </div>
+                        <div id="ranking-table-body">
+            <div class="row">
+                <span>1.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851e8dd4db47e7177c63b0b7d53" alt="Take on Me cover" loading="lazy">
+                <div class="song-details">
+                    <span>a-ha</span>
+                    <span class="song">Take on Me</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>2.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485152f532df7ba3269b0242fed9" alt="Girls Just Want to Have Fun cover" loading="lazy">
+                <div class="song-details">
+                    <span>Cyndi Lauper</span>
+                    <span class="song">Girls Just Want to Have Fun</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>3.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b3994c94dfb241923664bb4d" alt="Sweet Dreams (Are Made of This) cover" loading="lazy">
+                <div class="song-details">
+                    <span>Eurythmics</span>
+                    <span class="song">Sweet Dreams (Are Made of This)</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>4.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485149c982dae436bac27c336f45" alt="Tainted Love cover" loading="lazy">
+                <div class="song-details">
+                    <span>Soft Cell</span>
+                    <span class="song">Tainted Love</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>5.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851a2fc41b0dd6ce4f0d16a4c46" alt="Wake Me Up Before You Go-Go cover" loading="lazy">
+                <div class="song-details">
+                    <span>Wham!</span>
+                    <span class="song">Wake Me Up Before You Go-Go</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>6.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485115ebbedaacef61af244262a8" alt="Never Gonna Give You Up cover" loading="lazy">
+                <div class="song-details">
+                    <span>Rick Astley</span>
+                    <span class="song">Never Gonna Give You Up</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>7.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851de437d960dda1ac0a3586d97" alt="Billie Jean cover" loading="lazy">
+                <div class="song-details">
+                    <span>Michael Jackson</span>
+                    <span class="song">Billie Jean</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>8.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851cc57e9b00b87dd0f6e868347" alt="I Wanna Dance with Somebody (Who Loves Me) cover" loading="lazy">
+                <div class="song-details">
+                    <span>Whitney Houston</span>
+                    <span class="song">I Wanna Dance with Somebody (Who Loves Me)</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>9.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851c7d7cdad0c2ffa5620129ee8" alt="Karma Chameleon cover" loading="lazy">
+                <div class="song-details">
+                    <span>Culture Club</span>
+                    <span class="song">Karma Chameleon</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>10.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514a052b99c042dc15f933145b" alt="Africa cover" loading="lazy">
+                <div class="song-details">
+                    <span>TOTO</span>
+                    <span class="song">Africa</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>11.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048511310670cbb82f06474372cfd" alt="Self Control cover" loading="lazy">
+                <div class="song-details">
+                    <span>Laura Branigan</span>
+                    <span class="song">Self Control</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>12.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514e2755e7a96ec5e062c76aac" alt="Eye of the Tiger cover" loading="lazy">
+                <div class="song-details">
+                    <span>Survivor</span>
+                    <span class="song">Eye of the Tiger</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>13.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b9c4979446c4d39bc08e9503" alt="Big in Japan cover" loading="lazy">
+                <div class="song-details">
+                    <span>Alphaville</span>
+                    <span class="song">Big in Japan</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>14.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514650ca0a8f88129d4667acc5" alt="I'm So Excited cover" loading="lazy">
+                <div class="song-details">
+                    <span>The Pointer Sisters</span>
+                    <span class="song">I'm So Excited</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>15.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851de437d960dda1ac0a3586d97" alt="Beat It cover" loading="lazy">
+                <div class="song-details">
+                    <span>Michael Jackson</span>
+                    <span class="song">Beat It</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>16.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851cf1fee2a55e98e22bf358512" alt="Summer Of '69 cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bryan Adams</span>
+                    <span class="song">Summer Of '69</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>17.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485188ffe8c41647856e6fa5e1ab" alt="Just Can't Get Enough cover" loading="lazy">
+                <div class="song-details">
+                    <span>Depeche Mode</span>
+                    <span class="song">Just Can't Get Enough</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>18.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048515579d8a505c727349a203074" alt="Don't You Want Me cover" loading="lazy">
+                <div class="song-details">
+                    <span>The Human League</span>
+                    <span class="song">Don't You Want Me</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>19.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851aa5e4c9da271951ac0b31fa2" alt="Down Under cover" loading="lazy">
+                <div class="song-details">
+                    <span>Men At Work</span>
+                    <span class="song">Down Under</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>20.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048517b436d31c5ae44b334736619" alt="Maniac cover" loading="lazy">
+                <div class="song-details">
+                    <span>Michael Sembello</span>
+                    <span class="song">Maniac</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>21.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485163fa4751355b66f236943275" alt="Don't Stop Believin' (2022 Remaster) cover" loading="lazy">
+                <div class="song-details">
+                    <span>Journey</span>
+                    <span class="song">Don't Stop Believin' (2022 Remaster)</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>22.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851fb2faa3ed46d1d0124ca325e" alt="(I Just) Died In Your Arms cover" loading="lazy">
+                <div class="song-details">
+                    <span>Cutting Crew</span>
+                    <span class="song">(I Just) Died In Your Arms</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>23.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048512ec4aea38b44eba9756767fa" alt="Smalltown Boy cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bronski Beat</span>
+                    <span class="song">Smalltown Boy</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>24.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851c8e97cafeb2acb85b21a777e" alt="Every Breath You Take cover" loading="lazy">
+                <div class="song-details">
+                    <span>The Police</span>
+                    <span class="song">Every Breath You Take</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>25.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851eafaf556eda644a745d0144d" alt="Walking On Sunshine cover" loading="lazy">
+                <div class="song-details">
+                    <span>Katrina & The Waves</span>
+                    <span class="song">Walking On Sunshine</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>26.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b414c63fb435b622238c15ed" alt="Jump cover" loading="lazy">
+                <div class="song-details">
+                    <span>Van Halen</span>
+                    <span class="song">Jump</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>27.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485122463d6939fec9e17b2a6235" alt="Everybody Wants To Rule The World cover" loading="lazy">
+                <div class="song-details">
+                    <span>Tears For Fears</span>
+                    <span class="song">Everybody Wants To Rule The World</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>28.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851cfe4163cbb6d12f3ec15898e" alt="Maneater cover" loading="lazy">
+                <div class="song-details">
+                    <span>Daryl Hall & John Oates</span>
+                    <span class="song">Maneater</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>29.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048517e51ffd6a2e8f77ffd56bb8f" alt="99 Luftballons cover" loading="lazy">
+                <div class="song-details">
+                    <span>Nena</span>
+                    <span class="song">99 Luftballons</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>30.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851bd0c47e4cfb4ee327e53bc73" alt="You Spin Me Round (Like a Record) cover" loading="lazy">
+                <div class="song-details">
+                    <span>Dead Or Alive</span>
+                    <span class="song">You Spin Me Round (Like a Record)</span>
+                </div>
+                <span class="year-box">*1984</span>
+            </div>
+
+            <div class="row">
+                <span>31.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851eb11e2abccdca41f39ad3b89" alt="I'm Still Standing cover" loading="lazy">
+                <div class="song-details">
+                    <span>Elton John</span>
+                    <span class="song">I'm Still Standing</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>32.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851275774501f737e10d92adaca" alt="Relax (Come Fighting) cover" loading="lazy">
+                <div class="song-details">
+                    <span>Frankie Goes To Hollywood</span>
+                    <span class="song">Relax (Come Fighting)</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>33.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514f7420eec423c20556744d7d" alt="Tell It to My Heart cover" loading="lazy">
+                <div class="song-details">
+                    <span>Taylor Dayne</span>
+                    <span class="song">Tell It to My Heart</span>
+                </div>
+                <span class="year-box">1988</span>
+            </div>
+
+            <div class="row">
+                <span>34.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851da6790936a48b6719083dcac" alt="We Built This City cover" loading="lazy">
+                <div class="song-details">
+                    <span>Starship</span>
+                    <span class="song">We Built This City</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>35.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048515695a657aef0e81bde0c6001" alt="Don't You (Forget About Me) cover" loading="lazy">
+                <div class="song-details">
+                    <span>Simple Minds</span>
+                    <span class="song">Don't You (Forget About Me)</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>36.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048511233a7885e76b74d0b2a9473" alt="Kids In America cover" loading="lazy">
+                <div class="song-details">
+                    <span>Kim Wilde</span>
+                    <span class="song">Kids In America</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>37.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048511336b31b6a1799f0de5807ac" alt="Livin' On A Prayer cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bon Jovi</span>
+                    <span class="song">Livin' On A Prayer</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>38.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048518d8b304fd2d17f66272f3a37" alt="Major Tom (Coming Home) cover" loading="lazy">
+                <div class="song-details">
+                    <span>Peter Schilling</span>
+                    <span class="song">Major Tom (Coming Home)</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>39.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851862601dff4e202ffd3c9fea8" alt="Heaven Is a Place on Earth cover" loading="lazy">
+                <div class="song-details">
+                    <span>Belinda Carlisle</span>
+                    <span class="song">Heaven Is a Place on Earth</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>40.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851d2675cb6847d1b1da9fc28a3" alt="Holding Out for a Hero cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bonnie Tyler</span>
+                    <span class="song">Holding Out for a Hero</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>41.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048516b44fa8f5415cc4c945117be" alt="Like a Prayer cover" loading="lazy">
+                <div class="song-details">
+                    <span>Madonna</span>
+                    <span class="song">Like a Prayer</span>
+                </div>
+                <span class="year-box">*1989</span>
+            </div>
+
+            <div class="row">
+                <span>42.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851c573a4a852f010523c4ba383" alt="She Drives Me Crazy cover" loading="lazy">
+                <div class="song-details">
+                    <span>Fine Young Cannibals</span>
+                    <span class="song">She Drives Me Crazy</span>
+                </div>
+                <span class="year-box">1988</span>
+            </div>
+
+            <div class="row">
+                <span>43.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485119db9ac54c80a898a179f0f1" alt="Footloose cover" loading="lazy">
+                <div class="song-details">
+                    <span>Kenny Loggins</span>
+                    <span class="song">Footloose</span>
+                </div>
+                <span class="year-box">*1984</span>
+            </div>
+
+            <div class="row">
+                <span>44.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b9c4979446c4d39bc08e9503" alt="Forever Young cover" loading="lazy">
+                <div class="song-details">
+                    <span>Alphaville</span>
+                    <span class="song">Forever Young</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>45.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485122c3c99e7aa0ba6cd08a6be6" alt="The Look cover" loading="lazy">
+                <div class="song-details">
+                    <span>Roxette</span>
+                    <span class="song">The Look</span>
+                </div>
+                <span class="year-box">1988</span>
+            </div>
+
+            <div class="row">
+                <span>46.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851e4e8d06c95deb67f0340cbd5" alt="One Night in Bangkok cover" loading="lazy">
+                <div class="song-details">
+                    <span>Murray Head</span>
+                    <span class="song">One Night in Bangkok</span>
+                </div>
+                <span class="year-box">1980</span>
+            </div>
+
+            <div class="row">
+                <span>47.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048518bd8adbdc4727d9080240905" alt="Come On Eileen cover" loading="lazy">
+                <div class="song-details">
+                    <span>Dexys Midnight Runners</span>
+                    <span class="song">Come On Eileen</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>48.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851056e90910cbaf5c5b892aeba" alt="Another One Bites The Dust cover" loading="lazy">
+                <div class="song-details">
+                    <span>Queen</span>
+                    <span class="song">Another One Bites The Dust</span>
+                </div>
+                <span class="year-box">1980</span>
+            </div>
+
+            <div class="row">
+                <span>49.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851a7865e686c36a4adda6c9978" alt="Dancing In the Dark cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bruce Springsteen</span>
+                    <span class="song">Dancing In the Dark</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>50.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485156daa802ddbaedf04e8123cc" alt="Hungry Eyes cover" loading="lazy">
+                <div class="song-details">
+                    <span>Eric Carmen</span>
+                    <span class="song">Hungry Eyes</span>
+                </div>
+                <span class="year-box">*1987</span>
+            </div>
+
+            <div class="row">
+                <span>51.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851814cbc4746358a25c84c62e7" alt="Uptown Girl cover" loading="lazy">
+                <div class="song-details">
+                    <span>Billy Joel</span>
+                    <span class="song">Uptown Girl</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>52.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048518f5813c842cb115f3cf1fecd" alt="Voyage voyage cover" loading="lazy">
+                <div class="song-details">
+                    <span>Desireless</span>
+                    <span class="song">Voyage voyage</span>
+                </div>
+                <span class="year-box">*1987</span>
+            </div>
+
+            <div class="row">
+                <span>53.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485187e51905aaafd4b2e46e9121" alt="Rock Me Amadeus cover" loading="lazy">
+                <div class="song-details">
+                    <span>Falco</span>
+                    <span class="song">Rock Me Amadeus</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>54.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048519565c4df27be4aee5edc8009" alt="Shout cover" loading="lazy">
+                <div class="song-details">
+                    <span>Tears For Fears</span>
+                    <span class="song">Shout</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>55.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851aedd9728f5cc4b13ee49e061" alt="Cheri Cheri Lady cover" loading="lazy">
+                <div class="song-details">
+                    <span>Modern Talking</span>
+                    <span class="song">Cheri Cheri Lady</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>56.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851f39d2c92c546da7bcae4cd66" alt="Our House cover" loading="lazy">
+                <div class="song-details">
+                    <span>Madness</span>
+                    <span class="song">Our House</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>57.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048511ade47900d03a0276737982b" alt="(I'll Never Be) Maria Magdalena cover" loading="lazy">
+                <div class="song-details">
+                    <span>Sandra</span>
+                    <span class="song">(I'll Never Be) Maria Magdalena</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>58.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048518cefe8e2f2cfd63ce073fa96" alt="Total Eclipse of the Heart cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bonnie Tyler</span>
+                    <span class="song">Total Eclipse of the Heart</span>
+                </div>
+                <span class="year-box">*1983</span>
+            </div>
+
+            <div class="row">
+                <span>59.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485149e6168f69625252689c2526" alt="You Give Love A Bad Name cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bon Jovi</span>
+                    <span class="song">You Give Love A Bad Name</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>60.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b93f4b305362bec903d41e3b" alt="Dancing with Tears in My Eyes cover" loading="lazy">
+                <div class="song-details">
+                    <span>Ultravox</span>
+                    <span class="song">Dancing with Tears in My Eyes</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>61.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851c61fd7cba6914924fea49ea9" alt="Easy Lover cover" loading="lazy">
+                <div class="song-details">
+                    <span>Philip Bailey</span>
+                    <span class="song">Easy Lover</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>62.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851ce5da542e3aec8325e844311" alt="It's Raining Men cover" loading="lazy">
+                <div class="song-details">
+                    <span>The Weather Girls</span>
+                    <span class="song">It's Raining Men</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>63.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851f6954c1f074f66907a8c5483" alt="In The Air Tonight cover" loading="lazy">
+                <div class="song-details">
+                    <span>Phil Collins</span>
+                    <span class="song">In The Air Tonight</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>64.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048518ccc17f29764d812062204a8" alt="Bette Davis Eyes cover" loading="lazy">
+                <div class="song-details">
+                    <span>Kim Carnes</span>
+                    <span class="song">Bette Davis Eyes</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>65.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851a04b4373fd72bf81c8784adf" alt="The Best cover" loading="lazy">
+                <div class="song-details">
+                    <span>Tina Turner</span>
+                    <span class="song">The Best</span>
+                </div>
+                <span class="year-box">1989</span>
+            </div>
+
+            <div class="row">
+                <span>66.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851fa2b556c0bfe0598828944e0" alt="When the Rain Begins to Fall cover" loading="lazy">
+                <div class="song-details">
+                    <span>Jermaine Jackson</span>
+                    <span class="song">When the Rain Begins to Fall</span>
+                </div>
+                <span class="year-box">*1984</span>
+            </div>
+
+            <div class="row">
+                <span>67.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485158c4e9c84ece7d31f51636f3" alt="Walk Of Life cover" loading="lazy">
+                <div class="song-details">
+                    <span>Dire Straits</span>
+                    <span class="song">Walk Of Life</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>68.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048512ff76b4da68f018b4735ee59" alt="Flashdance...What a Feeling cover" loading="lazy">
+                <div class="song-details">
+                    <span>Irene Cara</span>
+                    <span class="song">Flashdance...What a Feeling</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>69.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851cd7e670a91d0263d2ee1d8a7" alt="Your Love cover" loading="lazy">
+                <div class="song-details">
+                    <span>The Outfield</span>
+                    <span class="song">Your Love</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>70.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851983bb3e3f0c66b9b89a832fa" alt="Video Killed The Radio Star cover" loading="lazy">
+                <div class="song-details">
+                    <span>The Buggles</span>
+                    <span class="song">Video Killed The Radio Star</span>
+                </div>
+                <span class="year-box">1980</span>
+            </div>
+
+            <div class="row">
+                <span>71.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b5b8cc071f275542924c573a" alt="The Safety Dance cover" loading="lazy">
+                <div class="song-details">
+                    <span>Men Without Hats</span>
+                    <span class="song">The Safety Dance</span>
+                </div>
+                <span class="year-box">*1982</span>
+            </div>
+
+            <div class="row">
+                <span>72.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048519c884c1f2cdd0988fafaa53a" alt="Skandal im Sperrbezirk cover" loading="lazy">
+                <div class="song-details">
+                    <span>Spider Murphy Gang</span>
+                    <span class="song">Skandal im Sperrbezirk</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>73.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851499c6d2eaeb941d76acdfe41" alt="Always on My Mind cover" loading="lazy">
+                <div class="song-details">
+                    <span>Pet Shop Boys</span>
+                    <span class="song">Always on My Mind</span>
+                </div>
+                <span class="year-box">*1987</span>
+            </div>
+
+            <div class="row">
+                <span>74.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851f5e30500f0eec7d92b159eae" alt="The Final Countdown cover" loading="lazy">
+                <div class="song-details">
+                    <span>Europe</span>
+                    <span class="song">The Final Countdown</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>75.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851377198e5b790b5ebf137bd83" alt="Nothing's Gonna Stop Us Now cover" loading="lazy">
+                <div class="song-details">
+                    <span>Starship</span>
+                    <span class="song">Nothing's Gonna Stop Us Now</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>76.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851f903e62767a0e22e33b7af83" alt="Hold the Line cover" loading="lazy">
+                <div class="song-details">
+                    <span>TOTO</span>
+                    <span class="song">Hold the Line</span>
+                </div>
+                <span class="year-box">1978</span>
+            </div>
+
+            <div class="row">
+                <span>77.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851bd2851c86603f3036f506443" alt="Ohne Dich (schlaf' ich heut Nacht nicht ein) cover" loading="lazy">
+                <div class="song-details">
+                    <span>Münchener Freiheit</span>
+                    <span class="song">Ohne Dich (schlaf' ich heut Nacht nicht ein)</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>78.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048515306ed42ae78f317258c51bb" alt="The Power Of Love cover" loading="lazy">
+                <div class="song-details">
+                    <span>Huey Lewis & The News</span>
+                    <span class="song">The Power Of Love</span>
+                </div>
+                <span class="year-box">*1985</span>
+            </div>
+
+            <div class="row">
+                <span>79.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485199aab0b95eb4bb1e7e24c795" alt="You're My Heart, You're My Soul cover" loading="lazy">
+                <div class="song-details">
+                    <span>Modern Talking</span>
+                    <span class="song">You're My Heart, You're My Soul</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>80.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851d254ca497999ae980a5a38c5" alt="Under Pressure cover" loading="lazy">
+                <div class="song-details">
+                    <span>Queen</span>
+                    <span class="song">Under Pressure</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>81.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851ab0a92e5cd20c2224c44a8a6" alt="You Can't Hurry Love cover" loading="lazy">
+                <div class="song-details">
+                    <span>Phil Collins</span>
+                    <span class="song">You Can't Hurry Love</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>82.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485152f532df7ba3269b0242fed9" alt="Time After Time cover" loading="lazy">
+                <div class="song-details">
+                    <span>Cyndi Lauper</span>
+                    <span class="song">Time After Time</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>83.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048511946747b8692919f98918ec4" alt="We Didn't Start the Fire cover" loading="lazy">
+                <div class="song-details">
+                    <span>Billy Joel</span>
+                    <span class="song">We Didn't Start the Fire</span>
+                </div>
+                <span class="year-box">1989</span>
+            </div>
+
+            <div class="row">
+                <span>84.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851ac19c6552524d207aac1277b" alt="(I've Had) The Time Of My Life cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bill Medley</span>
+                    <span class="song">(I've Had) The Time Of My Life</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>85.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851a20464e6697dc1149d3a5cdc" alt="White Wedding cover" loading="lazy">
+                <div class="song-details">
+                    <span>Billy Idol</span>
+                    <span class="song">White Wedding</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>86.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851de437d960dda1ac0a3586d97" alt="Thriller cover" loading="lazy">
+                <div class="song-details">
+                    <span>Michael Jackson</span>
+                    <span class="song">Thriller</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>87.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851ea07dca8b4ca808c1e5b17fb" alt="Rebel Yell cover" loading="lazy">
+                <div class="song-details">
+                    <span>Billy Idol</span>
+                    <span class="song">Rebel Yell</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>88.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851be1421122cef4940f500ac06" alt="Brother Louie cover" loading="lazy">
+                <div class="song-details">
+                    <span>Modern Talking</span>
+                    <span class="song">Brother Louie</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>89.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485119db9ac54c80a898a179f0f1" alt="Danger Zone cover" loading="lazy">
+                <div class="song-details">
+                    <span>Kenny Loggins</span>
+                    <span class="song">Danger Zone</span>
+                </div>
+                <span class="year-box">*1986</span>
+            </div>
+
+            <div class="row">
+                <span>90.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851a47127db3e929f64a2795666" alt="All Night Long (All Night) cover" loading="lazy">
+                <div class="song-details">
+                    <span>Lionel Richie</span>
+                    <span class="song">All Night Long (All Night)</span>
+                </div>
+                <span class="year-box">*1983</span>
+            </div>
+
+            <div class="row">
+                <span>91.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851db0917ddd4139153bc1d1a1a" alt="Let's Dance cover" loading="lazy">
+                <div class="song-details">
+                    <span>David Bowie</span>
+                    <span class="song">Let's Dance</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>92.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851972ac79d249efed1c7b2c8c1" alt="Enjoy the Silence cover" loading="lazy">
+                <div class="song-details">
+                    <span>Depeche Mode</span>
+                    <span class="song">Enjoy the Silence</span>
+                </div>
+                <span class="year-box">*1991</span>
+            </div>
+
+            <div class="row">
+                <span>93.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048513e030a7e606959674643d274" alt="I Want to Know What Love Is cover" loading="lazy">
+                <div class="song-details">
+                    <span>Foreigner</span>
+                    <span class="song">I Want to Know What Love Is</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>94.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851887b7c596249f628db6c6473" alt="Celebration cover" loading="lazy">
+                <div class="song-details">
+                    <span>Kool & The Gang</span>
+                    <span class="song">Celebration</span>
+                </div>
+                <span class="year-box">1980</span>
+            </div>
+
+            <div class="row">
+                <span>95.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851de82204a5baa683ce85d57cb" alt="Tarzan Boy cover" loading="lazy">
+                <div class="song-details">
+                    <span>Baltimora</span>
+                    <span class="song">Tarzan Boy</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>96.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048513c73b2e0a6aa490736f19751" alt="I Love Rock 'N Roll cover" loading="lazy">
+                <div class="song-details">
+                    <span>Joan Jett & the Blackhearts</span>
+                    <span class="song">I Love Rock 'N Roll</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>97.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851a7865e686c36a4adda6c9978" alt="Born in the U.S.A. cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bruce Springsteen</span>
+                    <span class="song">Born in the U.S.A.</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>98.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048519d6e136c3a0298fb0c53abea" alt="Don't Go cover" loading="lazy">
+                <div class="song-details">
+                    <span>Yazoo</span>
+                    <span class="song">Don't Go</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>99.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851cebdf1f7660ace8c2a80585c" alt="I'm Gonna Be (500 Miles) cover" loading="lazy">
+                <div class="song-details">
+                    <span>The Proclaimers</span>
+                    <span class="song">I'm Gonna Be (500 Miles)</span>
+                </div>
+                <span class="year-box">1988</span>
+            </div>
+
+            <div class="row">
+                <span>100.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851680c56a0f621a43edf19046a" alt="Live Is Life cover" loading="lazy">
+                <div class="song-details">
+                    <span>Opus</span>
+                    <span class="song">Live Is Life</span>
+                </div>
+                <span class="year-box">*1984</span>
+            </div>
+
+            <div class="row">
+                <span>101.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514384b6976cadaec272114022" alt="I Was Made For Lovin' You cover" loading="lazy">
+                <div class="song-details">
+                    <span>KISS</span>
+                    <span class="song">I Was Made For Lovin' You</span>
+                </div>
+                <span class="year-box">1979</span>
+            </div>
+
+            <div class="row">
+                <span>102.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048513540f5cb8e1e7a54125f84db" alt="West End Girls cover" loading="lazy">
+                <div class="song-details">
+                    <span>Pet Shop Boys</span>
+                    <span class="song">West End Girls</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>103.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048512120ff3ce98436f0715b38c6" alt="Irgendwie, irgendwo, irgendwann cover" loading="lazy">
+                <div class="song-details">
+                    <span>Nena</span>
+                    <span class="song">Irgendwie, irgendwo, irgendwann</span>
+                </div>
+                <span class="year-box">*1983</span>
+            </div>
+
+            <div class="row">
+                <span>104.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485131f17f2b636f0f1c8d83dc42" alt="It's a Sin cover" loading="lazy">
+                <div class="song-details">
+                    <span>Pet Shop Boys</span>
+                    <span class="song">It's a Sin</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>105.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851dafd1cd6e9537ec8463ea691" alt="Daddy Cool cover" loading="lazy">
+                <div class="song-details">
+                    <span>Boney M.</span>
+                    <span class="song">Daddy Cool</span>
+                </div>
+                <span class="year-box">1976</span>
+            </div>
+
+            <div class="row">
+                <span>106.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851a69b2f779d3e76c1c2ac8df8" alt="Never Ending Story cover" loading="lazy">
+                <div class="song-details">
+                    <span>Limahl</span>
+                    <span class="song">Never Ending Story</span>
+                </div>
+                <span class="year-box">*1985</span>
+            </div>
+
+            <div class="row">
+                <span>107.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485149512287075ab421f6d4a61a" alt="Der Kommissar cover" loading="lazy">
+                <div class="song-details">
+                    <span>Falco</span>
+                    <span class="song">Der Kommissar</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>108.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485121ebf49b3292c3f0f575f0f5" alt="Sweet Child O' Mine cover" loading="lazy">
+                <div class="song-details">
+                    <span>Guns N' Roses</span>
+                    <span class="song">Sweet Child O' Mine</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>109.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485140b546b80b4ee796292f9bfc" alt="Fade To Grey cover" loading="lazy">
+                <div class="song-details">
+                    <span>Visage</span>
+                    <span class="song">Fade To Grey</span>
+                </div>
+                <span class="year-box">1980</span>
+            </div>
+
+            <div class="row">
+                <span>110.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048516b44fa8f5415cc4c945117be" alt="Material Girl cover" loading="lazy">
+                <div class="song-details">
+                    <span>Madonna</span>
+                    <span class="song">Material Girl</span>
+                </div>
+                <span class="year-box">*1984</span>
+            </div>
+
+            <div class="row">
+                <span>111.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851aed4808eac27b70ba532f0e4" alt="Ghostbusters cover" loading="lazy">
+                <div class="song-details">
+                    <span>Ray Parker Jr.</span>
+                    <span class="song">Ghostbusters</span>
+                </div>
+                <span class="year-box">*1984</span>
+            </div>
+
+            <div class="row">
+                <span>112.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485138a8040723d47a318341e87c" alt="The Boys Of Summer cover" loading="lazy">
+                <div class="song-details">
+                    <span>Don Henley</span>
+                    <span class="song">The Boys Of Summer</span>
+                </div>
+                <span class="year-box">*1984</span>
+            </div>
+
+            <div class="row">
+                <span>113.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851aa22899360d8ba6704732dec" alt="Gimme! Gimme! Gimme! (A Man After Midnight) cover" loading="lazy">
+                <div class="song-details">
+                    <span>ABBA</span>
+                    <span class="song">Gimme! Gimme! Gimme! (A Man After Midnight)</span>
+                </div>
+                <span class="year-box">1979</span>
+            </div>
+
+            <div class="row">
+                <span>114.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485123cc0f0a925845a3de4aca38" alt="Kiss cover" loading="lazy">
+                <div class="song-details">
+                    <span>Prince</span>
+                    <span class="song">Kiss</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>115.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048513236b9c08b319f7e50e74f53" alt="Do You Really Want To Hurt Me cover" loading="lazy">
+                <div class="song-details">
+                    <span>Culture Club</span>
+                    <span class="song">Do You Really Want To Hurt Me</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>116.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851aaba065944cd82a6f15c86b6" alt="Little Lies cover" loading="lazy">
+                <div class="song-details">
+                    <span>Fleetwood Mac</span>
+                    <span class="song">Little Lies</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>117.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851de3094d98b62340d3268c7bc" alt="La Isla Bonita cover" loading="lazy">
+                <div class="song-details">
+                    <span>Madonna</span>
+                    <span class="song">La Isla Bonita</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>118.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851156af29c45454563c9dca43b" alt="You Keep Me Hangin On cover" loading="lazy">
+                <div class="song-details">
+                    <span>Kim Wilde</span>
+                    <span class="song">You Keep Me Hangin On</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>119.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485199ee23dac7128cb5754f593c" alt="Caribbean Queen (No More Love On the Run) cover" loading="lazy">
+                <div class="song-details">
+                    <span>Billy Ocean</span>
+                    <span class="song">Caribbean Queen (No More Love On the Run)</span>
+                </div>
+                <span class="year-box">*1984</span>
+            </div>
+
+            <div class="row">
+                <span>120.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048510dd350beeb5ac73672ad6e80" alt="Beds Are Burning cover" loading="lazy">
+                <div class="song-details">
+                    <span>Midnight Oil</span>
+                    <span class="song">Beds Are Burning</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>121.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485107d3de253ec02c26c04b95f1" alt="Venus cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bananarama</span>
+                    <span class="song">Venus</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>122.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b917174eb6069392e8a3cc7f" alt="Invisible Touch cover" loading="lazy">
+                <div class="song-details">
+                    <span>Genesis</span>
+                    <span class="song">Invisible Touch</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>123.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851ed7b5f97f354c216f80d61da" alt="It's My Life cover" loading="lazy">
+                <div class="song-details">
+                    <span>Talk Talk</span>
+                    <span class="song">It's My Life</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>124.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485199d424b0873a9a714279a9f3" alt="Like a Virgin cover" loading="lazy">
+                <div class="song-details">
+                    <span>Madonna</span>
+                    <span class="song">Like a Virgin</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>125.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485170f7a1b35d5165c85b95a0e0" alt="Dancing Queen cover" loading="lazy">
+                <div class="song-details">
+                    <span>ABBA</span>
+                    <span class="song">Dancing Queen</span>
+                </div>
+                <span class="year-box">1976</span>
+            </div>
+
+            <div class="row">
+                <span>126.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514742af6d5c9eae5f7f63ee5e" alt="Words cover" loading="lazy">
+                <div class="song-details">
+                    <span>F.R. David</span>
+                    <span class="song">Words</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>127.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485152038992fc6d7868f31d23b7" alt="Stayin' Alive cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bee Gees</span>
+                    <span class="song">Stayin' Alive</span>
+                </div>
+                <span class="year-box">1979</span>
+            </div>
+
+            <div class="row">
+                <span>128.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485113cbe3e4dfa81fe5b91f2f1c" alt="Call Me cover" loading="lazy">
+                <div class="song-details">
+                    <span>Blondie</span>
+                    <span class="song">Call Me</span>
+                </div>
+                <span class="year-box">*1980</span>
+            </div>
+
+            <div class="row">
+                <span>129.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514b4b45092c83d44bf00a4158" alt="Love Is A Battlefield cover" loading="lazy">
+                <div class="song-details">
+                    <span>Pat Benatar</span>
+                    <span class="song">Love Is A Battlefield</span>
+                </div>
+                <span class="year-box">*1984</span>
+            </div>
+
+            <div class="row">
+                <span>130.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851dc77e9fda68572f218233a87" alt="What A Feeling cover" loading="lazy">
+                <div class="song-details">
+                    <span>Irene Cara</span>
+                    <span class="song">What A Feeling</span>
+                </div>
+                <span class="year-box">*1997</span>
+            </div>
+
+            <div class="row">
+                <span>131.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048515be5f807f6f0549e198a44b4" alt="Radio Ga Ga cover" loading="lazy">
+                <div class="song-details">
+                    <span>Queen</span>
+                    <span class="song">Radio Ga Ga</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>132.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851710d3231cb732a6a7ff91a4e" alt="You're the Voice cover" loading="lazy">
+                <div class="song-details">
+                    <span>John Farnham</span>
+                    <span class="song">You're the Voice</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>133.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048510faf2fc17446651865ce2282" alt="September cover" loading="lazy">
+                <div class="song-details">
+                    <span>Earth, Wind & Fire</span>
+                    <span class="song">September</span>
+                </div>
+                <span class="year-box">1978</span>
+            </div>
+
+            <div class="row">
+                <span>134.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485151bf9a4f9aad335ae9a031fa" alt="The Great Commandment cover" loading="lazy">
+                <div class="song-details">
+                    <span>Camouflage</span>
+                    <span class="song">The Great Commandment</span>
+                </div>
+                <span class="year-box">1988</span>
+            </div>
+
+            <div class="row">
+                <span>135.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485158c4e9c84ece7d31f51636f3" alt="Money For Nothing cover" loading="lazy">
+                <div class="song-details">
+                    <span>Dire Straits</span>
+                    <span class="song">Money For Nothing</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>136.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b80d7868e6e0275d12102508" alt="Abracadabra cover" loading="lazy">
+                <div class="song-details">
+                    <span>Steve Miller Band</span>
+                    <span class="song">Abracadabra</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>137.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b30c8b93cef6fa26f8a7f17a" alt="Let's Groove cover" loading="lazy">
+                <div class="song-details">
+                    <span>Earth, Wind & Fire</span>
+                    <span class="song">Let's Groove</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>138.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485121ebf49b3292c3f0f575f0f5" alt="Paradise City cover" loading="lazy">
+                <div class="song-details">
+                    <span>Guns N' Roses</span>
+                    <span class="song">Paradise City</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>139.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485178cc1b7af3f28ab51ea81266" alt="Don't Leave Me This Way (with Sarah Jane Morris) cover" loading="lazy">
+                <div class="song-details">
+                    <span>The Communards</span>
+                    <span class="song">Don't Leave Me This Way (with Sarah Jane Morris)</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>140.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851d1e7c0e1bf0980298428a1ae" alt="I Want To Break Free cover" loading="lazy">
+                <div class="song-details">
+                    <span>Queen</span>
+                    <span class="song">I Want To Break Free</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>141.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048518fb8aca87001515a6945b9b7" alt="The Wild Boys cover" loading="lazy">
+                <div class="song-details">
+                    <span>Duran Duran</span>
+                    <span class="song">The Wild Boys</span>
+                </div>
+                <span class="year-box">*1984</span>
+            </div>
+
+            <div class="row">
+                <span>142.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851f82ae34da3139fbd2a88332b" alt="What's Love Got to Do with It cover" loading="lazy">
+                <div class="song-details">
+                    <span>Tina Turner</span>
+                    <span class="song">What's Love Got to Do with It</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>143.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048513b6773d6e0df6eedefb20190" alt="Somebody's Watching Me cover" loading="lazy">
+                <div class="song-details">
+                    <span>Rockwell</span>
+                    <span class="song">Somebody's Watching Me</span>
+                </div>
+                <span class="year-box">*1983</span>
+            </div>
+
+            <div class="row">
+                <span>144.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485188def4b3b8a11c36abecbe45" alt="Such a Shame cover" loading="lazy">
+                <div class="song-details">
+                    <span>Talk Talk</span>
+                    <span class="song">Such a Shame</span>
+                </div>
+                <span class="year-box">1990</span>
+            </div>
+
+            <div class="row">
+                <span>145.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485189f304aa1ce2e9822ba9a583" alt="1000 und 1 Nacht (Zoom!) cover" loading="lazy">
+                <div class="song-details">
+                    <span>Klaus Lage</span>
+                    <span class="song">1000 und 1 Nacht (Zoom!)</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>146.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485109880a7b8636c5a0615dc0c8" alt="You Can Call Me Al cover" loading="lazy">
+                <div class="song-details">
+                    <span>Paul Simon</span>
+                    <span class="song">You Can Call Me Al</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>147.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048519d9a49f795b4340538f43435" alt="Owner of a Lonely Heart cover" loading="lazy">
+                <div class="song-details">
+                    <span>Yes</span>
+                    <span class="song">Owner of a Lonely Heart</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>148.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048518a2ce3f148f57584269c3782" alt="Purple Rain cover" loading="lazy">
+                <div class="song-details">
+                    <span>Prince</span>
+                    <span class="song">Purple Rain</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>149.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b261545058d4ec62dae2bfed" alt="Sunglasses At Night cover" loading="lazy">
+                <div class="song-details">
+                    <span>Corey Hart</span>
+                    <span class="song">Sunglasses At Night</span>
+                </div>
+                <span class="year-box">*1983</span>
+            </div>
+
+            <div class="row">
+                <span>150.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485175aeab61b79629d43ca8f42f" alt="Got My Mind Set on You cover" loading="lazy">
+                <div class="song-details">
+                    <span>George Harrison</span>
+                    <span class="song">Got My Mind Set on You</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>151.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048515d149c05419231f335e35bb7" alt="Poison cover" loading="lazy">
+                <div class="song-details">
+                    <span>Alice Cooper</span>
+                    <span class="song">Poison</span>
+                </div>
+                <span class="year-box">1989</span>
+            </div>
+
+            <div class="row">
+                <span>152.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485152f98248777e1eeb39195d9e" alt="Wouldn't It Be Good cover" loading="lazy">
+                <div class="song-details">
+                    <span>Nik Kershaw</span>
+                    <span class="song">Wouldn't It Be Good</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>153.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851abc5193decc1a2984a93f31e" alt="Upside Down cover" loading="lazy">
+                <div class="song-details">
+                    <span>Diana Ross</span>
+                    <span class="song">Upside Down</span>
+                </div>
+                <span class="year-box">1980</span>
+            </div>
+
+            <div class="row">
+                <span>154.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048519824c6e084b02d24b2e22e94" alt="Break My Stride cover" loading="lazy">
+                <div class="song-details">
+                    <span>Matthew Wilder</span>
+                    <span class="song">Break My Stride</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>155.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485196a1909790d3b6a986e2b971" alt="Moonlight Shadow cover" loading="lazy">
+                <div class="song-details">
+                    <span>Mike Oldfield</span>
+                    <span class="song">Moonlight Shadow</span>
+                </div>
+                <span class="year-box">*1983</span>
+            </div>
+
+            <div class="row">
+                <span>156.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514db9d010717d936878757c97" alt="Sternenhimmel cover" loading="lazy">
+                <div class="song-details">
+                    <span>Hubert Kah</span>
+                    <span class="song">Sternenhimmel</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>157.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514d08fc99eff4ed52dfce91fa" alt="Super Trouper cover" loading="lazy">
+                <div class="song-details">
+                    <span>ABBA</span>
+                    <span class="song">Super Trouper</span>
+                </div>
+                <span class="year-box">1980</span>
+            </div>
+
+            <div class="row">
+                <span>158.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048513b43ef752e5af1d00c1fc213" alt="In The Army Now cover" loading="lazy">
+                <div class="song-details">
+                    <span>Status Quo</span>
+                    <span class="song">In The Army Now</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>159.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485121b1e09b108ad50b72b841c9" alt="The Heat Is On cover" loading="lazy">
+                <div class="song-details">
+                    <span>Glenn Frey</span>
+                    <span class="song">The Heat Is On</span>
+                </div>
+                <span class="year-box">*1985</span>
+            </div>
+
+            <div class="row">
+                <span>160.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514d38e04627b3843ed3db042c" alt="I Ran (So Far Away) cover" loading="lazy">
+                <div class="song-details">
+                    <span>A Flock Of Seagulls</span>
+                    <span class="song">I Ran (So Far Away)</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>161.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048510b51f8d91f3a21e8426361ae" alt="You Shook Me All Night Long cover" loading="lazy">
+                <div class="song-details">
+                    <span>AC/DC</span>
+                    <span class="song">You Shook Me All Night Long</span>
+                </div>
+                <span class="year-box">1980</span>
+            </div>
+
+            <div class="row">
+                <span>162.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485122c3c99e7aa0ba6cd08a6be6" alt="Listen To Your Heart cover" loading="lazy">
+                <div class="song-details">
+                    <span>Roxette</span>
+                    <span class="song">Listen To Your Heart</span>
+                </div>
+                <span class="year-box">1988</span>
+            </div>
+
+            <div class="row">
+                <span>163.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048517c39dd133836c2c1c87e34d6" alt="Don't Stop Me Now cover" loading="lazy">
+                <div class="song-details">
+                    <span>Queen</span>
+                    <span class="song">Don't Stop Me Now</span>
+                </div>
+                <span class="year-box">1978</span>
+            </div>
+
+            <div class="row">
+                <span>164.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851fed4a89ebe66064c67f2f4ea" alt="Walk Like an Egyptian cover" loading="lazy">
+                <div class="song-details">
+                    <span>The Bangles</span>
+                    <span class="song">Walk Like an Egyptian</span>
+                </div>
+                <span class="year-box">*1985</span>
+            </div>
+
+            <div class="row">
+                <span>165.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851fb2daafa0993f39d87a84385" alt="Another Day in Paradise cover" loading="lazy">
+                <div class="song-details">
+                    <span>Phil Collins</span>
+                    <span class="song">Another Day in Paradise</span>
+                </div>
+                <span class="year-box">1989</span>
+            </div>
+
+            <div class="row">
+                <span>166.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851ad08f4b38efbff0c0da0f252" alt="Running Up That Hill (A Deal With God) cover" loading="lazy">
+                <div class="song-details">
+                    <span>Kate Bush</span>
+                    <span class="song">Running Up That Hill (A Deal With God)</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>167.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851c621e025f32cc28a1ec86e3b" alt="Blue Monday '88 cover" loading="lazy">
+                <div class="song-details">
+                    <span>New Order</span>
+                    <span class="song">Blue Monday '88</span>
+                </div>
+                <span class="year-box">*1988</span>
+            </div>
+
+            <div class="row">
+                <span>168.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048513c182241fcd86aeca2c68a63" alt="Blue Monday cover" loading="lazy">
+                <div class="song-details">
+                    <span>New Order</span>
+                    <span class="song">Blue Monday</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>169.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485125a4df452a3c42ccc2e9288b" alt="Should I Stay or Should I Go cover" loading="lazy">
+                <div class="song-details">
+                    <span>The Clash</span>
+                    <span class="song">Should I Stay or Should I Go</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>170.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851dac4efc0ebdfd9d92f127129" alt="Need You Tonight cover" loading="lazy">
+                <div class="song-details">
+                    <span>INXS</span>
+                    <span class="song">Need You Tonight</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>171.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851e8dd4db47e7177c63b0b7d53" alt="The Sun Always Shines on T.V. cover" loading="lazy">
+                <div class="song-details">
+                    <span>a-ha</span>
+                    <span class="song">The Sun Always Shines on T.V.</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>172.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851facf92d793609aa3bc5cc4e7" alt="Here I Go Again cover" loading="lazy">
+                <div class="song-details">
+                    <span>Whitesnake</span>
+                    <span class="song">Here I Go Again</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>173.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851c79d8dc24ad4cecc246eedd3" alt="Come Back and Stay cover" loading="lazy">
+                <div class="song-details">
+                    <span>Paul Young</span>
+                    <span class="song">Come Back and Stay</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>174.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851cfccabf39d00d34235d5bcd6" alt="Broken Wings cover" loading="lazy">
+                <div class="song-details">
+                    <span>Mr. Mister</span>
+                    <span class="song">Broken Wings</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>175.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851515b863931c7c056796cf177" alt="The Riddle cover" loading="lazy">
+                <div class="song-details">
+                    <span>Nik Kershaw</span>
+                    <span class="song">The Riddle</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>176.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851c5c6cddc4cdce692d2c9c630" alt="Sounds Like a Melody cover" loading="lazy">
+                <div class="song-details">
+                    <span>Alphaville</span>
+                    <span class="song">Sounds Like a Melody</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>177.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485151c02a77d09dfcd53c8676d0" alt="Highway to Hell cover" loading="lazy">
+                <div class="song-details">
+                    <span>AC/DC</span>
+                    <span class="song">Highway to Hell</span>
+                </div>
+                <span class="year-box">1979</span>
+            </div>
+
+            <div class="row">
+                <span>178.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514ea1fd36ef7d78214011371c" alt="Burning Heart cover" loading="lazy">
+                <div class="song-details">
+                    <span>Survivor</span>
+                    <span class="song">Burning Heart</span>
+                </div>
+                <span class="year-box">*1985</span>
+            </div>
+
+            <div class="row">
+                <span>179.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b01f868ecc62e809af0dd63b" alt="People Are People cover" loading="lazy">
+                <div class="song-details">
+                    <span>Depeche Mode</span>
+                    <span class="song">People Are People</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>180.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048517e51ffd6a2e8f77ffd56bb8f" alt="Nur geträumt cover" loading="lazy">
+                <div class="song-details">
+                    <span>Nena</span>
+                    <span class="song">Nur geträumt</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>181.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485136c6760e3e9a9f7f7749e1a7" alt="Bruttosozialprodukt cover" loading="lazy">
+                <div class="song-details">
+                    <span>Geier Sturzflug</span>
+                    <span class="song">Bruttosozialprodukt</span>
+                </div>
+                <span class="year-box">*1983</span>
+            </div>
+
+            <div class="row">
+                <span>182.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514d08fc99eff4ed52dfce91fa" alt="Lay All Your Love On Me cover" loading="lazy">
+                <div class="song-details">
+                    <span>ABBA</span>
+                    <span class="song">Lay All Your Love On Me</span>
+                </div>
+                <span class="year-box">1980</span>
+            </div>
+
+            <div class="row">
+                <span>183.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485157051c7a61d037d4f2ddaeb4" alt="Gold cover" loading="lazy">
+                <div class="song-details">
+                    <span>Spandau Ballet</span>
+                    <span class="song">Gold</span>
+                </div>
+                <span class="year-box">*1983</span>
+            </div>
+
+            <div class="row">
+                <span>184.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048510ef24611a73e7be48f6c2802" alt="Cold as Ice cover" loading="lazy">
+                <div class="song-details">
+                    <span>Foreigner</span>
+                    <span class="song">Cold as Ice</span>
+                </div>
+                <span class="year-box">1977</span>
+            </div>
+
+            <div class="row">
+                <span>185.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048512df339142f0f0090b54b3546" alt="Jump (Original Mix) cover" loading="lazy">
+                <div class="song-details">
+                    <span>The Pointer Sisters</span>
+                    <span class="song">Jump (Original Mix)</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>186.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048519015296f9afabfc102989521" alt="How Will I Know cover" loading="lazy">
+                <div class="song-details">
+                    <span>Whitney Houston</span>
+                    <span class="song">How Will I Know</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>187.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851451162ec42844033f5eb8e9d" alt="Männer cover" loading="lazy">
+                <div class="song-details">
+                    <span>Herbert Grönemeyer</span>
+                    <span class="song">Männer</span>
+                </div>
+                <span class="year-box">*1984</span>
+            </div>
+
+            <div class="row">
+                <span>188.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514a052b99c042dc15f933145b" alt="Rosanna cover" loading="lazy">
+                <div class="song-details">
+                    <span>TOTO</span>
+                    <span class="song">Rosanna</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>189.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851070bc5edcb93d3f394b9445d" alt="Give It Up cover" loading="lazy">
+                <div class="song-details">
+                    <span>KC & The Sunshine Band</span>
+                    <span class="song">Give It Up</span>
+                </div>
+                <span class="year-box">*1983</span>
+            </div>
+
+            <div class="row">
+                <span>190.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514f3004f43ea41a8ee1510035" alt="Gloria cover" loading="lazy">
+                <div class="song-details">
+                    <span>Laura Branigan</span>
+                    <span class="song">Gloria</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>191.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851aaba065944cd82a6f15c86b6" alt="Everywhere cover" loading="lazy">
+                <div class="song-details">
+                    <span>Fleetwood Mac</span>
+                    <span class="song">Everywhere</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>192.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048518cb3917fce65d031cb168868" alt="Ella, elle l'a cover" loading="lazy">
+                <div class="song-details">
+                    <span>France Gall</span>
+                    <span class="song">Ella, elle l'a</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>193.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048510647b071b7be0a607f87a1cd" alt="Heart Of Glass cover" loading="lazy">
+                <div class="song-details">
+                    <span>Blondie</span>
+                    <span class="song">Heart Of Glass</span>
+                </div>
+                <span class="year-box">1978</span>
+            </div>
+
+            <div class="row">
+                <span>194.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048512a1049b6d0d2b4c3c0abe7a8" alt="I Will Survive cover" loading="lazy">
+                <div class="song-details">
+                    <span>Gloria Gaynor</span>
+                    <span class="song">I Will Survive</span>
+                </div>
+                <span class="year-box">1978</span>
+            </div>
+
+            <div class="row">
+                <span>195.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851ece39be98348e2f4dbead00a" alt="Girl You Know It's True cover" loading="lazy">
+                <div class="song-details">
+                    <span>Milli Vanilli</span>
+                    <span class="song">Girl You Know It's True</span>
+                </div>
+                <span class="year-box">*1988</span>
+            </div>
+
+            <div class="row">
+                <span>196.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851ef6ca3d6603026779235e017" alt="Goldener Reiter cover" loading="lazy">
+                <div class="song-details">
+                    <span>Joachim Witt</span>
+                    <span class="song">Goldener Reiter</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>197.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048517a1e0215c41f0ce411623301" alt="If I Could Turn Back Time cover" loading="lazy">
+                <div class="song-details">
+                    <span>Cher</span>
+                    <span class="song">If I Could Turn Back Time</span>
+                </div>
+                <span class="year-box">1989</span>
+            </div>
+
+            <div class="row">
+                <span>198.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851f1dd69d7399290cc25324706" alt="Red Red Wine cover" loading="lazy">
+                <div class="song-details">
+                    <span>UB40</span>
+                    <span class="song">Red Red Wine</span>
+                </div>
+                <span class="year-box">*1983</span>
+            </div>
+
+            <div class="row">
+                <span>199.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851bcf214aa282a19326c295e31" alt="Baby Jane cover" loading="lazy">
+                <div class="song-details">
+                    <span>Rod Stewart</span>
+                    <span class="song">Baby Jane</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>200.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485162e97ae5072de10850578af5" alt="Smooth Criminal cover" loading="lazy">
+                <div class="song-details">
+                    <span>Michael Jackson</span>
+                    <span class="song">Smooth Criminal</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>201.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851ad86452926a17a895062cf53" alt="Careless Whisper cover" loading="lazy">
+                <div class="song-details">
+                    <span>George Michael</span>
+                    <span class="song">Careless Whisper</span>
+                </div>
+                <span class="year-box">*1984</span>
+            </div>
+
+            <div class="row">
+                <span>202.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851a453c233ac47457247868964" alt="Dein ist mein ganzes Herz cover" loading="lazy">
+                <div class="song-details">
+                    <span>Heinz Rudolf Kunze</span>
+                    <span class="song">Dein ist mein ganzes Herz</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>203.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048510a7d45a345534966a4ad2c39" alt="Personal Jesus cover" loading="lazy">
+                <div class="song-details">
+                    <span>Depeche Mode</span>
+                    <span class="song">Personal Jesus</span>
+                </div>
+                <span class="year-box">*1990</span>
+            </div>
+
+            <div class="row">
+                <span>204.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048512aeaf070ead1ee09448a1db8" alt="Send Me An Angel cover" loading="lazy">
+                <div class="song-details">
+                    <span>Real Life</span>
+                    <span class="song">Send Me An Angel</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>205.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851fa183fdd680f1d249ba2f893" alt="Take My Breath Away cover" loading="lazy">
+                <div class="song-details">
+                    <span>Berlin</span>
+                    <span class="song">Take My Breath Away</span>
+                </div>
+                <span class="year-box">*1986</span>
+            </div>
+
+            <div class="row">
+                <span>206.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/845f656e26f657cd3fbc43b8ce032feac1387aa0" alt="Sunshine Reggae cover" loading="lazy">
+                <div class="song-details">
+                    <span>Laid Back</span>
+                    <span class="song">Sunshine Reggae</span>
+                </div>
+                <span class="year-box">*1982</span>
+            </div>
+
+            <div class="row">
+                <span>207.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485118489610a4971e31173ef6a9" alt="I Like Chopin cover" loading="lazy">
+                <div class="song-details">
+                    <span>Gazebo</span>
+                    <span class="song">I Like Chopin</span>
+                </div>
+                <span class="year-box">*1983</span>
+            </div>
+
+            <div class="row">
+                <span>208.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514d55a853360c6d7e05ed3e31" alt="Cambodia cover" loading="lazy">
+                <div class="song-details">
+                    <span>Kim Wilde</span>
+                    <span class="song">Cambodia</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>209.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851e98d08fbea1a2f03229abc20" alt="A Kind Of Magic cover" loading="lazy">
+                <div class="song-details">
+                    <span>Queen</span>
+                    <span class="song">A Kind Of Magic</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>210.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851efb3fd949c71bc9b5e7b31dc" alt="What Is Love cover" loading="lazy">
+                <div class="song-details">
+                    <span>Haddaway</span>
+                    <span class="song">What Is Love</span>
+                </div>
+                <span class="year-box">*1993</span>
+            </div>
+
+            <div class="row">
+                <span>211.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851a29ca418b2a64e80002a86e3" alt="Here Comes the Rain Again cover" loading="lazy">
+                <div class="song-details">
+                    <span>Eurythmics</span>
+                    <span class="song">Here Comes the Rain Again</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>212.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851e9d575a198f3f79e362c72d0" alt="Boys cover" loading="lazy">
+                <div class="song-details">
+                    <span>Sabrina</span>
+                    <span class="song">Boys</span>
+                </div>
+                <span class="year-box">1988</span>
+            </div>
+
+            <div class="row">
+                <span>213.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b7a9a6a2bf311630d3fc6956" alt="Faith cover" loading="lazy">
+                <div class="song-details">
+                    <span>George Michael</span>
+                    <span class="song">Faith</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>214.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851ede118b5f0e159dd18d42b90" alt="Runaway cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bon Jovi</span>
+                    <span class="song">Runaway</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>215.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851389fee741b183fc3df0fbf64" alt="I Think We're Alone Now cover" loading="lazy">
+                <div class="song-details">
+                    <span>Tiffany</span>
+                    <span class="song">I Think We're Alone Now</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>216.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514c5fac07f80bad278dfbad1e" alt="Ain't Nobody cover" loading="lazy">
+                <div class="song-details">
+                    <span>Chaka Khan</span>
+                    <span class="song">Ain't Nobody</span>
+                </div>
+                <span class="year-box">*1989</span>
+            </div>
+
+            <div class="row">
+                <span>217.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851a3bc94f95c99c3ad2f40740a" alt="Enola Gay cover" loading="lazy">
+                <div class="song-details">
+                    <span>Orchestral Manoeuvres In The Dark</span>
+                    <span class="song">Enola Gay</span>
+                </div>
+                <span class="year-box">1980</span>
+            </div>
+
+            <div class="row">
+                <span>218.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851dc18a92283f70ad2dc40992d" alt="The Way to Your Heart cover" loading="lazy">
+                <div class="song-details">
+                    <span>Soulsister</span>
+                    <span class="song">The Way to Your Heart</span>
+                </div>
+                <span class="year-box">*1989</span>
+            </div>
+
+            <div class="row">
+                <span>219.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048518399047ff71200928f5b6508" alt="Thunderstruck cover" loading="lazy">
+                <div class="song-details">
+                    <span>AC/DC</span>
+                    <span class="song">Thunderstruck</span>
+                </div>
+                <span class="year-box">1990</span>
+            </div>
+
+            <div class="row">
+                <span>220.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485191f442ef24b8410ec1e68003" alt="Pump Up The Jam cover" loading="lazy">
+                <div class="song-details">
+                    <span>Technotronic</span>
+                    <span class="song">Pump Up The Jam</span>
+                </div>
+                <span class="year-box">1989</span>
+            </div>
+
+            <div class="row">
+                <span>221.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485140d7d779d24a56af1ad59e41" alt="Black Velvet cover" loading="lazy">
+                <div class="song-details">
+                    <span>Alannah Myles</span>
+                    <span class="song">Black Velvet</span>
+                </div>
+                <span class="year-box">1989</span>
+            </div>
+
+            <div class="row">
+                <span>222.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851605bafbd3a7bf46d22bf51d9" alt="In The Heat Of The Night cover" loading="lazy">
+                <div class="song-details">
+                    <span>Sandra</span>
+                    <span class="song">In The Heat Of The Night</span>
+                </div>
+                <span class="year-box">*1985</span>
+            </div>
+
+            <div class="row">
+                <span>223.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851a4c4d688bf2e9105189f6e88" alt="Love Is A Shield cover" loading="lazy">
+                <div class="song-details">
+                    <span>Camouflage</span>
+                    <span class="song">Love Is A Shield</span>
+                </div>
+                <span class="year-box">1989</span>
+            </div>
+
+            <div class="row">
+                <span>224.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b2622bac004d3ef8fac1095b" alt="Born to Be Alive cover" loading="lazy">
+                <div class="song-details">
+                    <span>Patrick Hernandez</span>
+                    <span class="song">Born to Be Alive</span>
+                </div>
+                <span class="year-box">1978</span>
+            </div>
+
+            <div class="row">
+                <span>225.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485193bf4c5e67f6a72149d94c94" alt="Love Shack cover" loading="lazy">
+                <div class="song-details">
+                    <span>The B-52's</span>
+                    <span class="song">Love Shack</span>
+                </div>
+                <span class="year-box">1989</span>
+            </div>
+
+            <div class="row">
+                <span>226.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851e1520b61485114423bb8c923" alt="The Look Of Love, Pt.1 cover" loading="lazy">
+                <div class="song-details">
+                    <span>ABC</span>
+                    <span class="song">The Look Of Love, Pt.1</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>227.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851ea07dca8b4ca808c1e5b17fb" alt="Eyes Without A Face cover" loading="lazy">
+                <div class="song-details">
+                    <span>Billy Idol</span>
+                    <span class="song">Eyes Without A Face</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>228.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851cf1fee2a55e98e22bf358512" alt="Run To You cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bryan Adams</span>
+                    <span class="song">Run To You</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>229.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b7bea3d01f04e6d0408d2afe" alt="With Or Without You cover" loading="lazy">
+                <div class="song-details">
+                    <span>U2</span>
+                    <span class="song">With Or Without You</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>230.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514c894b7dd6b2939c8c547d3d" alt="Rhythm Is a Dancer cover" loading="lazy">
+                <div class="song-details">
+                    <span>SNAP!</span>
+                    <span class="song">Rhythm Is a Dancer</span>
+                </div>
+                <span class="year-box">*1992</span>
+            </div>
+
+            <div class="row">
+                <span>231.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851f7ae51b20b3ffa211c406d71" alt="Dance Hall Days cover" loading="lazy">
+                <div class="song-details">
+                    <span>Wang Chung</span>
+                    <span class="song">Dance Hall Days</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>232.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851423e79bb88e572ba87cdd185" alt="True cover" loading="lazy">
+                <div class="song-details">
+                    <span>Spandau Ballet</span>
+                    <span class="song">True</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>233.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048510c3a44d76807bef665eacfa3" alt="Hot Stuff cover" loading="lazy">
+                <div class="song-details">
+                    <span>Donna Summer</span>
+                    <span class="song">Hot Stuff</span>
+                </div>
+                <span class="year-box">1979</span>
+            </div>
+
+            <div class="row">
+                <span>234.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b5aaa0790028feff586033f3" alt="Dolce Vita cover" loading="lazy">
+                <div class="song-details">
+                    <span>Ryan Paris</span>
+                    <span class="song">Dolce Vita</span>
+                </div>
+                <span class="year-box">*1984</span>
+            </div>
+
+            <div class="row">
+                <span>235.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851cbf8b2cd89b54a021db51e75" alt="Another Brick in the Wall, Pt. 2 cover" loading="lazy">
+                <div class="song-details">
+                    <span>Pink Floyd</span>
+                    <span class="song">Another Brick in the Wall, Pt. 2</span>
+                </div>
+                <span class="year-box">1979</span>
+            </div>
+
+            <div class="row">
+                <span>236.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851982630895c9b2d63c843e6cc" alt="You're a Woman cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bad Boys Blue</span>
+                    <span class="song">You're a Woman</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>237.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b4b6bc2c1a5e08b502770871" alt="Axel F cover" loading="lazy">
+                <div class="song-details">
+                    <span>Harold Faltermeyer</span>
+                    <span class="song">Axel F</span>
+                </div>
+                <span class="year-box">1988</span>
+            </div>
+
+            <div class="row">
+                <span>238.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048513935d142c21b8e40c28bc088" alt="A Little Respect cover" loading="lazy">
+                <div class="song-details">
+                    <span>Erasure</span>
+                    <span class="song">A Little Respect</span>
+                </div>
+                <span class="year-box">1988</span>
+            </div>
+
+            <div class="row">
+                <span>239.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851fe1a9aa59e3c6189a09ae37a" alt="You Make My Dreams (Come True) cover" loading="lazy">
+                <div class="song-details">
+                    <span>Daryl Hall & John Oates</span>
+                    <span class="song">You Make My Dreams (Come True)</span>
+                </div>
+                <span class="year-box">1980</span>
+            </div>
+
+            <div class="row">
+                <span>240.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048512c33399e119cec9b0fcde564" alt="Dancing On The Ceiling cover" loading="lazy">
+                <div class="song-details">
+                    <span>Lionel Richie</span>
+                    <span class="song">Dancing On The Ceiling</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>241.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485199d641d3b4543e650874fa1d" alt="Touch Me (I Want Your Body) cover" loading="lazy">
+                <div class="song-details">
+                    <span>Samantha Fox</span>
+                    <span class="song">Touch Me (I Want Your Body)</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>242.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851c1d3679959ec78f671658952" alt="You Win Again cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bee Gees</span>
+                    <span class="song">You Win Again</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>243.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485152f98248777e1eeb39195d9e" alt="I Won't Let The Sun Go Down On Me cover" loading="lazy">
+                <div class="song-details">
+                    <span>Nik Kershaw</span>
+                    <span class="song">I Won't Let The Sun Go Down On Me</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>244.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b917174eb6069392e8a3cc7f" alt="Land of Confusion cover" loading="lazy">
+                <div class="song-details">
+                    <span>Genesis</span>
+                    <span class="song">Land of Confusion</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>245.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851926764eed4da16a86b9ce33e" alt="Rock You Like A Hurricane cover" loading="lazy">
+                <div class="song-details">
+                    <span>Scorpions</span>
+                    <span class="song">Rock You Like A Hurricane</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>246.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851cefb195c53a73383add7f5f7" alt="Lessons In Love cover" loading="lazy">
+                <div class="song-details">
+                    <span>Level 42</span>
+                    <span class="song">Lessons In Love</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>247.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048517f29399efc7ee01e8c56936d" alt="Get Down On It cover" loading="lazy">
+                <div class="song-details">
+                    <span>Kool & The Gang</span>
+                    <span class="song">Get Down On It</span>
+                </div>
+                <span class="year-box">*1993</span>
+            </div>
+
+            <div class="row">
+                <span>248.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485187e51905aaafd4b2e46e9121" alt="Jeanny cover" loading="lazy">
+                <div class="song-details">
+                    <span>Falco</span>
+                    <span class="song">Jeanny</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>249.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485108fc42e575043a753f60d675" alt="Start Me Up cover" loading="lazy">
+                <div class="song-details">
+                    <span>The Rolling Stones</span>
+                    <span class="song">Start Me Up</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>250.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851e319baafd16e84f0408af2a0" alt="Bohemian Rhapsody cover" loading="lazy">
+                <div class="song-details">
+                    <span>Queen</span>
+                    <span class="song">Bohemian Rhapsody</span>
+                </div>
+                <span class="year-box">1975</span>
+            </div>
+
+            <div class="row">
+                <span>251.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048513ce3e2272e25916844f10d86" alt="Don't Dream It's Over cover" loading="lazy">
+                <div class="song-details">
+                    <span>Crowded House</span>
+                    <span class="song">Don't Dream It's Over</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>252.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851a90317b8d96c0b3f5e9c5e3d" alt="Push It cover" loading="lazy">
+                <div class="song-details">
+                    <span>Salt-N-Pepa</span>
+                    <span class="song">Push It</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>253.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048516b44fa8f5415cc4c945117be" alt="Into the Groove cover" loading="lazy">
+                <div class="song-details">
+                    <span>Madonna</span>
+                    <span class="song">Into the Groove</span>
+                </div>
+                <span class="year-box">*1985</span>
+            </div>
+
+            <div class="row">
+                <span>254.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048511ade47900d03a0276737982b" alt="Everlasting Love cover" loading="lazy">
+                <div class="song-details">
+                    <span>Sandra</span>
+                    <span class="song">Everlasting Love</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>255.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851056e90910cbaf5c5b892aeba" alt="Crazy Little Thing Called Love cover" loading="lazy">
+                <div class="song-details">
+                    <span>Queen</span>
+                    <span class="song">Crazy Little Thing Called Love</span>
+                </div>
+                <span class="year-box">1980</span>
+            </div>
+
+            <div class="row">
+                <span>256.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514bb26d8bdb8c2458d5f9b63e" alt="Vamos a la Playa cover" loading="lazy">
+                <div class="song-details">
+                    <span>Righeira</span>
+                    <span class="song">Vamos a la Playa</span>
+                </div>
+                <span class="year-box">*1983</span>
+            </div>
+
+            <div class="row">
+                <span>257.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b7bea3d01f04e6d0408d2afe" alt="I Still Haven't Found What I'm Looking For cover" loading="lazy">
+                <div class="song-details">
+                    <span>U2</span>
+                    <span class="song">I Still Haven't Found What I'm Looking For</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>258.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485123e3de02327a72bcf7a1c5d3" alt="Just an Illusion cover" loading="lazy">
+                <div class="song-details">
+                    <span>Imagination</span>
+                    <span class="song">Just an Illusion</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>259.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b20af9c8ff56d8b178cefec0" alt="Cruel Summer cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bananarama</span>
+                    <span class="song">Cruel Summer</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>260.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048513cd67ccf241ae843f6da62f3" alt="Urgent cover" loading="lazy">
+                <div class="song-details">
+                    <span>Foreigner</span>
+                    <span class="song">Urgent</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>261.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048510afe71cef9e2f4db5ebfcc82" alt="Fresh cover" loading="lazy">
+                <div class="song-details">
+                    <span>Kool & The Gang</span>
+                    <span class="song">Fresh</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>262.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851ed0ddbe4b2590f448e9845be" alt="Part-Time Lover cover" loading="lazy">
+                <div class="song-details">
+                    <span>Stevie Wonder</span>
+                    <span class="song">Part-Time Lover</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>263.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485115ebbedaacef61af244262a8" alt="Together Forever cover" loading="lazy">
+                <div class="song-details">
+                    <span>Rick Astley</span>
+                    <span class="song">Together Forever</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>264.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851de3094d98b62340d3268c7bc" alt="Papa Don't Preach cover" loading="lazy">
+                <div class="song-details">
+                    <span>Madonna</span>
+                    <span class="song">Papa Don't Preach</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>265.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485138b2429ef948e6ca8d3ab599" alt="Centerfold cover" loading="lazy">
+                <div class="song-details">
+                    <span>The J. Geils Band</span>
+                    <span class="song">Centerfold</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>266.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048512323f86e757c3436b3cc38af" alt="Heat Of The Moment cover" loading="lazy">
+                <div class="song-details">
+                    <span>Asia</span>
+                    <span class="song">Heat Of The Moment</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>267.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851aa5e4c9da271951ac0b31fa2" alt="Who Can It Be Now? cover" loading="lazy">
+                <div class="song-details">
+                    <span>Men At Work</span>
+                    <span class="song">Who Can It Be Now?</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>268.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851a2b4f98f60e3cacf3866b2e3" alt="Sharp Dressed Man (2008 Remaster) cover" loading="lazy">
+                <div class="song-details">
+                    <span>ZZ Top</span>
+                    <span class="song">Sharp Dressed Man (2008 Remaster)</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>269.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b31ca7bbd75637f5a590c310" alt="Westerland cover" loading="lazy">
+                <div class="song-details">
+                    <span>Die Ärzte</span>
+                    <span class="song">Westerland</span>
+                </div>
+                <span class="year-box">1988</span>
+            </div>
+
+            <div class="row">
+                <span>270.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b49d49cc95564aede7998bb8" alt="Sultans Of Swing cover" loading="lazy">
+                <div class="song-details">
+                    <span>Dire Straits</span>
+                    <span class="song">Sultans Of Swing</span>
+                </div>
+                <span class="year-box">1978</span>
+            </div>
+
+            <div class="row">
+                <span>271.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851228264ef165a3de1041d0c22" alt="Felicità cover" loading="lazy">
+                <div class="song-details">
+                    <span>Al Bano And Romina Power</span>
+                    <span class="song">Felicità</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>272.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851894ae4df775c6b47438991af" alt="Walk This Way (feat. Aerosmith) cover" loading="lazy">
+                <div class="song-details">
+                    <span>Run–D.M.C.</span>
+                    <span class="song">Walk This Way (feat. Aerosmith)</span>
+                </div>
+                <span class="year-box">1986</span>
+            </div>
+
+            <div class="row">
+                <span>273.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485116c75e2dd2654d7d03f2c556" alt="Hungry Like the Wolf cover" loading="lazy">
+                <div class="song-details">
+                    <span>Duran Duran</span>
+                    <span class="song">Hungry Like the Wolf</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>274.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851c654a8583eb04ed769d096ea" alt="(Feels Like) Heaven cover" loading="lazy">
+                <div class="song-details">
+                    <span>Fiction Factory</span>
+                    <span class="song">(Feels Like) Heaven</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>275.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851858f93b738db08c4e500bd30" alt="Too Shy cover" loading="lazy">
+                <div class="song-details">
+                    <span>Kajagoogoo</span>
+                    <span class="song">Too Shy</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>276.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851cb3cea7439a97660b3aedb8c" alt="Straight Up cover" loading="lazy">
+                <div class="song-details">
+                    <span>Paula Abdul</span>
+                    <span class="song">Straight Up</span>
+                </div>
+                <span class="year-box">1988</span>
+            </div>
+
+            <div class="row">
+                <span>277.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485170a92681f8aff88714cb0296" alt="Lambada cover" loading="lazy">
+                <div class="song-details">
+                    <span>Kaoma</span>
+                    <span class="song">Lambada</span>
+                </div>
+                <span class="year-box">1989</span>
+            </div>
+
+            <div class="row">
+                <span>278.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851a895c616f899f06429bc8b4f" alt="Funkytown cover" loading="lazy">
+                <div class="song-details">
+                    <span>Lipps Inc.</span>
+                    <span class="song">Funkytown</span>
+                </div>
+                <span class="year-box">*1979</span>
+            </div>
+
+            <div class="row">
+                <span>279.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851bf11c98faa8d61e48eaf1c05" alt="You Came cover" loading="lazy">
+                <div class="song-details">
+                    <span>Kim Wilde</span>
+                    <span class="song">You Came</span>
+                </div>
+                <span class="year-box">1988</span>
+            </div>
+
+            <div class="row">
+                <span>280.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851dbf223dbb6abdffa642eb287" alt="YMCA cover" loading="lazy">
+                <div class="song-details">
+                    <span>Village People</span>
+                    <span class="song">YMCA</span>
+                </div>
+                <span class="year-box">1978</span>
+            </div>
+
+            <div class="row">
+                <span>281.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485143eb9bfd8bfb987af6e852e1" alt="The Loco-Motion cover" loading="lazy">
+                <div class="song-details">
+                    <span>Kylie Minogue</span>
+                    <span class="song">The Loco-Motion</span>
+                </div>
+                <span class="year-box">1988</span>
+            </div>
+
+            <div class="row">
+                <span>282.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485152038992fc6d7868f31d23b7" alt="Night Fever cover" loading="lazy">
+                <div class="song-details">
+                    <span>Bee Gees</span>
+                    <span class="song">Night Fever</span>
+                </div>
+                <span class="year-box">1979</span>
+            </div>
+
+            <div class="row">
+                <span>283.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485146e859872ed30a898160aeb2" alt="Sexual Healing cover" loading="lazy">
+                <div class="song-details">
+                    <span>Marvin Gaye</span>
+                    <span class="song">Sexual Healing</span>
+                </div>
+                <span class="year-box">1982</span>
+            </div>
+
+            <div class="row">
+                <span>284.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851a40e4b29bfacc9ef505b86d2" alt="Wonderful Life cover" loading="lazy">
+                <div class="song-details">
+                    <span>Black</span>
+                    <span class="song">Wonderful Life</span>
+                </div>
+                <span class="year-box">1987</span>
+            </div>
+
+            <div class="row">
+                <span>285.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048510b51f8d91f3a21e8426361ae" alt="Back In Black cover" loading="lazy">
+                <div class="song-details">
+                    <span>AC/DC</span>
+                    <span class="song">Back In Black</span>
+                </div>
+                <span class="year-box">1980</span>
+            </div>
+
+            <div class="row">
+                <span>286.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851e4ff6efb66c0c9e8bbb5eb71" alt="We're Not Gonna Take It cover" loading="lazy">
+                <div class="song-details">
+                    <span>Twisted Sister</span>
+                    <span class="song">We're Not Gonna Take It</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>287.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048518c1fadcc997a65384f34d694" alt="More Than a Feeling cover" loading="lazy">
+                <div class="song-details">
+                    <span>Boston</span>
+                    <span class="song">More Than a Feeling</span>
+                </div>
+                <span class="year-box">1976</span>
+            </div>
+
+            <div class="row">
+                <span>288.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048517027294551db4fda68b5ddac" alt="Don't Stop 'Til You Get Enough cover" loading="lazy">
+                <div class="song-details">
+                    <span>Michael Jackson</span>
+                    <span class="song">Don't Stop 'Til You Get Enough</span>
+                </div>
+                <span class="year-box">1979</span>
+            </div>
+
+            <div class="row">
+                <span>289.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851fe4d93329a65de9afd0ebbdb" alt="Holiday cover" loading="lazy">
+                <div class="song-details">
+                    <span>Madonna</span>
+                    <span class="song">Holiday</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>290.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851722206ae6845cdbbb4ed5e44" alt="Touch in the Night cover" loading="lazy">
+                <div class="song-details">
+                    <span>Silent Circle</span>
+                    <span class="song">Touch in the Night</span>
+                </div>
+                <span class="year-box">*1986</span>
+            </div>
+
+            <div class="row">
+                <span>291.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851fc4491c53b2f9e3c4b1e547e" alt="Teardrops cover" loading="lazy">
+                <div class="song-details">
+                    <span>Womack & Womack</span>
+                    <span class="song">Teardrops</span>
+                </div>
+                <span class="year-box">1988</span>
+            </div>
+
+            <div class="row">
+                <span>292.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048515e25e034e25258b356774c79" alt="Smooth Operator cover" loading="lazy">
+                <div class="song-details">
+                    <span>Sade</span>
+                    <span class="song">Smooth Operator</span>
+                </div>
+                <span class="year-box">*1984</span>
+            </div>
+
+            <div class="row">
+                <span>293.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485192d0747a634fcc351c6ac3c2" alt="Mamma Mia cover" loading="lazy">
+                <div class="song-details">
+                    <span>ABBA</span>
+                    <span class="song">Mamma Mia</span>
+                </div>
+                <span class="year-box">1975</span>
+            </div>
+
+            <div class="row">
+                <span>294.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b543da62e4ba434db59813d7" alt="Conga! cover" loading="lazy">
+                <div class="song-details">
+                    <span>Miami Sound Machine</span>
+                    <span class="song">Conga!</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>295.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851a2b4f98f60e3cacf3866b2e3" alt="Gimme All Your Lovin' cover" loading="lazy">
+                <div class="song-details">
+                    <span>ZZ Top</span>
+                    <span class="song">Gimme All Your Lovin'</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+
+            <div class="row">
+                <span>296.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485117f9e7e7784ed40b223e261c" alt="Super Freak cover" loading="lazy">
+                <div class="song-details">
+                    <span>Rick James</span>
+                    <span class="song">Super Freak</span>
+                </div>
+                <span class="year-box">1981</span>
+            </div>
+
+            <div class="row">
+                <span>297.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048514d08fc99eff4ed52dfce91fa" alt="The Winner Takes It All cover" loading="lazy">
+                <div class="song-details">
+                    <span>ABBA</span>
+                    <span class="song">The Winner Takes It All</span>
+                </div>
+                <span class="year-box">1980</span>
+            </div>
+
+            <div class="row">
+                <span>298.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d0000485187e51905aaafd4b2e46e9121" alt="Vienna Calling cover" loading="lazy">
+                <div class="song-details">
+                    <span>Falco</span>
+                    <span class="song">Vienna Calling</span>
+                </div>
+                <span class="year-box">1985</span>
+            </div>
+
+            <div class="row">
+                <span>299.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d000048510da5f73bd718a4e1a525f65d" alt="Hold Me Now cover" loading="lazy">
+                <div class="song-details">
+                    <span>Thompson Twins</span>
+                    <span class="song">Hold Me Now</span>
+                </div>
+                <span class="year-box">1984</span>
+            </div>
+
+            <div class="row">
+                <span>300.</span>
+                <img class="song-cover" src="https://i.scdn.co/image/ab67616d00004851b33c99d166f15236efd104e6" alt="She Works Hard For The Money cover" loading="lazy">
+                <div class="song-details">
+                    <span>Donna Summer</span>
+                    <span class="song">She Works Hard For The Money</span>
+                </div>
+                <span class="year-box">1983</span>
+            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="logo">MY80SLIST.COM</div>
+                <nav>
+                    <a href="#">HOME</a>
+                    <a href="#">ABOUT</a>
+                    <a href="#">METHODOLOGY</a>
+                </nav>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-spotify"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-soundcloud"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 MY80SLIST.COM. An Analytical Review of the Spotify Playlists & The Timeless Top 300.
+            </div>
+        </div>
+    </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const searchInput = document.querySelector('.ranking-search');
+        const clearSearch = document.querySelector('.clear-search');
+        const tableBody = document.getElementById('ranking-table-body');
+        const allRows = Array.from(tableBody.getElementsByClassName('row'));
+
+        function filterRows(searchTerm) {
+            const normalizedSearchTerm = searchTerm.toLowerCase().trim();
+            allRows.forEach(row => {
+                const artist = row.querySelector('.song-details span:first-child').textContent.toLowerCase();
+                const song = row.querySelector('.song-details .song').textContent.toLowerCase();
+                const year = row.querySelector('.year-box').textContent.toLowerCase();
+                
+                if (artist.includes(normalizedSearchTerm) || song.includes(normalizedSearchTerm) || year.includes(normalizedSearchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+        }
+
+        searchInput.addEventListener('keyup', function (event) {
+            const searchTerm = event.target.value;
+            filterRows(searchTerm);
+            clearSearch.classList.toggle('visible', searchTerm);
+        });
+
+        clearSearch.addEventListener('click', function () {
+            searchInput.value = '';
+            filterRows('');
+            clearSearch.classList.remove('visible');
+        });
+    });
+</script>
+</body>
+
+</html>
