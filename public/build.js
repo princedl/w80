@@ -36,7 +36,7 @@ function build() {
             const rank = song.rank || index + 1;
             return `
             <div class="row" itemscope itemtype="http://schema.org/MusicRecording">
-                <meta itemprop="url" content="https://open.spotify.com/intl-de/track/2WfaOiMkCvy7F5fcp2zZ8L?si=53dffe006b374390" />
+                <meta itemprop="url" content="https://open.spotify.com/intl-de/track/${song.spotifyID}" />
                 <span itemprop="position">${rank}.</span>
                 <img class="song-cover" itemprop="image" src="${song.imageUrl}" alt="${song.title} cover" loading="lazy">
                 <div class="song-details">
