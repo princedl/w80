@@ -38,7 +38,9 @@ function build() {
             <div class="row" itemscope itemtype="http://schema.org/MusicRecording">
                 <meta itemprop="url" content="https://open.spotify.com/intl-de/track/${song.spotifyID}" />
                 <span itemprop="position">${rank}.</span>
-                <img class="song-cover" itemprop="image" src="${song.imageUrl}" alt="${song.title} cover" loading="lazy">
+                <a href="https://open.spotify.com/intl-de/track/${song.spotifyID}" target="_blank" rel="noopener noreferrer">
+                    <img class="song-cover" itemprop="image" src="${song.imageUrl}" alt="${song.title} cover" loading="lazy">
+                </a>
                 <div class="song-details">
                     <span itemprop="byArtist" itemscope itemtype="http://schema.org/Person"><span itemprop="name">${song.artist}</span></span>
                     <span class="song" itemprop="name">${song.title}</span>
