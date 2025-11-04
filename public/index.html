@@ -366,19 +366,10 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <header>
-                    <div class="logo">bossmandy.com</div>
-                    <nav>
-                        <a href="#" class="active">START</a>
-                        <a href="#">ÜBER UNS</a>
-                        <a href="#">METHODE</a>
-                    </nav>
-                    <div class="hamburger"><i class="fas fa-bars"></i></div>
-                </header>
                 <div class="hero-content">
                     <h1>Die 80er: Ein digitales Denkmal.</h1>
                     <p>"Wir haben Spotify seziert: Das ist die unsterbliche Top 300 der 80er."</p>
-                    <button class="cta-button">ZEIG MIR DIE HITS!</button>
+                    <a href="#top300" style="text-decoration: none;"><button class="cta-button">ZEIG MIR DIE HITS!</button></a>
                 </div>
             </div>
         </section>
@@ -415,9 +406,9 @@
         <section class="ultimate-ranking-section">
             <div class="container">
                 <div class="ranking-list">
-                    <h3>Die TOP300 der 80er</h3>
+                    <h3 id="top300" class="cta-button" style="display: inline-block; margin-bottom: 40px; font-family: var(--font-sans); font-size: 16px;">Die TOP300 der 80er</h3>
                     <div class="search-container">
-                        <input type="text" class="ranking-search" placeholder="Finde deinen Lieblingssong...">
+                        <input type="text" class="ranking-search" placeholder="Finde deinen Lieblingssong, Künstler, Jahr...">
                         <i class="fas fa-times-circle clear-search"></i>
                     </div>
                     <div class="ranking-table">
