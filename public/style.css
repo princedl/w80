@@ -1,5 +1,4 @@
-
-        :root {
+:root {
             --color-dark: #121212;
             --color-light: #FFFFFF;
             --color-gray: #F0F0F0;
@@ -135,7 +134,8 @@
             padding: 10px;
             width: 100%;
             box-sizing: border-box;
-            padding-right: 30px; /* Make space for the icon */
+            padding-right: 30px;
+            /* Make space for the icon */
         }
 
         .clear-search {
@@ -145,7 +145,8 @@
             transform: translateY(-50%);
             cursor: pointer;
             color: #ccc;
-            display: none; /* Hidden by default */
+            display: none;
+            /* Hidden by default */
         }
 
         .clear-search.visible {
@@ -240,7 +241,8 @@
         footer {
             background-color: var(--color-dark);
             color: var(--color-light);
-            padding: 50px 0;
+            padding: 20px 0 80px 0;
+            font-family: var(--font-serif);
         }
 
         .footer-container {
@@ -257,7 +259,7 @@
             letter-spacing: 1px;
             font-size: 14px;
         }
-        
+
         .social-icons a {
             color: var(--color-light);
             text-decoration: none;
@@ -266,7 +268,7 @@
 
         .copyright {
             text-align: center;
-            padding-top: 50px;
+            padding: 50px 20px 0;
             margin-top: 50px;
             border-top: 1px solid #444;
             font-size: 0.9em;
@@ -281,13 +283,29 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 3em; }
-            .origin-columns, .ranking-layout, .insights-grid, .footer-grid { grid-template-columns: 1fr; }
-            header nav { display: none; }
-            .footer-right { text-align: left; margin-top: 40px; }
+            .hero-content h1 {
+                font-size: 3em;
+            }
+
+            .origin-columns,
+            .ranking-layout,
+            .insights-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header nav {
+                display: none;
+            }
+
+            .footer-right {
+                text-align: left;
+                margin-top: 40px;
+            }
 
             .ranking-table .header {
-                display: none; /* Hide header on small screens */
+                display: none;
+                /* Hide header on small screens */
             }
 
             .ranking-table .row {
@@ -304,6 +322,5 @@
         /* New Ranking Section */
         .ultimate-ranking-section {
             padding: 80px 0;
-            background-color: #FBE9E7;
+            background-color: var(--color-light);
         }
-    
